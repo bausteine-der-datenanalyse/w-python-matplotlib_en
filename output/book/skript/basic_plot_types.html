@@ -74,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-5e2c1d9542e5054b88dab1cd197b920f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-173c08f0120535b1b8a0ba1fc00bb1ae.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -226,7 +226,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="liniendiagramme-plt.plot" class="level2" data-number="2.1">
 <h2 data-number="2.1" class="anchored" data-anchor-id="liniendiagramme-plt.plot"><span class="header-section-number">2.1</span> 1. Liniendiagramme (<code>plt.plot()</code>)</h2>
 <p>Liniendiagramme eignen sich hervorragend zur Darstellung von Trends über Zeit.</p>
-<div id="42ae9a74" class="cell" data-execution_count="1">
+<div id="29749d61" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -251,7 +251,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="streudiagramme-plt.scatter" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="streudiagramme-plt.scatter"><span class="header-section-number">2.2</span> 2. Streudiagramme (<code>plt.scatter()</code>)</h2>
 <p>Streudiagramme werden verwendet, um Zusammenhänge zwischen zwei Variablen darzustellen.</p>
-<div id="2a183c6a" class="cell" data-execution_count="2">
+<div id="10e2734e" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.rand(<span class="dv">50</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.random.rand(<span class="dv">50</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -272,7 +272,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="balkendiagramme-plt.bar" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="balkendiagramme-plt.bar"><span class="header-section-number">2.3</span> 3. Balkendiagramme (<code>plt.bar()</code>)</h2>
 <p>Balkendiagramme eignen sich zur Darstellung kategorialer Daten.</p>
-<div id="cf66ca2c" class="cell" data-execution_count="3">
+<div id="6e917df4" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>kategorien <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>]</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>werte <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">5</span>]</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -293,7 +293,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="histogramme-plt.hist" class="level2" data-number="2.4">
 <h2 data-number="2.4" class="anchored" data-anchor-id="histogramme-plt.hist"><span class="header-section-number">2.4</span> 4. Histogramme (<code>plt.hist()</code>)</h2>
 <p>Histogramme zeigen die Verteilung numerischer Daten.</p>
-<div id="ab2a6679" class="cell" data-execution_count="4">
+<div id="7106f4ee" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>daten <span class="op">=</span> np.random.randn(<span class="dv">1000</span>)</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.hist(daten, bins<span class="op">=</span><span class="dv">30</span>, color<span class="op">=</span><span class="st">'purple'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Wert'</span>)</span>
@@ -312,14 +312,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="boxplots-plt.boxplot" class="level2" data-number="2.5">
 <h2 data-number="2.5" class="anchored" data-anchor-id="boxplots-plt.boxplot"><span class="header-section-number">2.5</span> 5. Boxplots (<code>plt.boxplot()</code>)</h2>
 <p>Boxplots helfen, Ausreißer und die Verteilung von Daten zu visualisieren.</p>
-<div id="5977ed3a" class="cell" data-execution_count="5">
+<div id="cdc0169a" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>daten <span class="op">=</span> [np.random.randn(<span class="dv">100</span>) <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>)]</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.boxplot(daten, labels<span class="op">=</span>[<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>])</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Wert'</span>)</span>
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot'</span>)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/var/folders/p_/ks3trxjx0jd839_g4g0vm4nc0000gn/T/ipykernel_7735/2728911591.py:2: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+<pre><code>/tmp/ipykernel_4429/2728911591.py:2: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
   plt.boxplot(daten, labels=['A', 'B', 'C', 'D'])</code></pre>
 </div>
 <div class="cell-output cell-output-display">
@@ -334,7 +334,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="heatmaps-plt.imshow" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="heatmaps-plt.imshow"><span class="header-section-number">2.6</span> 6. Heatmaps (<code>plt.imshow()</code>)</h2>
 <p>Heatmaps eignen sich zur Darstellung von 2D-Daten.</p>
-<div id="5321b833" class="cell" data-execution_count="6">
+<div id="4e6100ff" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>daten <span class="op">=</span> np.random.rand(<span class="dv">10</span>, <span class="dv">10</span>)</span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.imshow(daten, cmap<span class="op">=</span><span class="st">'coolwarm'</span>, interpolation<span class="op">=</span><span class="st">'nearest'</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.colorbar()</span>

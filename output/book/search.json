@@ -144,7 +144,7 @@
     "href": "skript/basic_plot_types.html#boxplots-plt.boxplot",
     "title": "2  Diagrammtypen in Matplotlib",
     "section": "2.5 5. Boxplots (plt.boxplot())",
-    "text": "2.5 5. Boxplots (plt.boxplot())\nBoxplots helfen, Ausreißer und die Verteilung von Daten zu visualisieren.\n\ndaten = [np.random.randn(100) for _ in range(4)]\nplt.boxplot(daten, labels=['A', 'B', 'C', 'D'])\nplt.ylabel('Wert')\nplt.title('Boxplot')\nplt.show()\n\n/var/folders/p_/ks3trxjx0jd839_g4g0vm4nc0000gn/T/ipykernel_7735/2728911591.py:2: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.\n  plt.boxplot(daten, labels=['A', 'B', 'C', 'D'])",
+    "text": "2.5 5. Boxplots (plt.boxplot())\nBoxplots helfen, Ausreißer und die Verteilung von Daten zu visualisieren.\n\ndaten = [np.random.randn(100) for _ in range(4)]\nplt.boxplot(daten, labels=['A', 'B', 'C', 'D'])\nplt.ylabel('Wert')\nplt.title('Boxplot')\nplt.show()\n\n/tmp/ipykernel_4429/2728911591.py:2: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.\n  plt.boxplot(daten, labels=['A', 'B', 'C', 'D'])",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Diagrammtypen in Matplotlib</span>"
     ]
