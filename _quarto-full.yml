@@ -1,0 +1,10 @@
+project:  
+  output-dir: output/book/
+book:
+  chapters: 
+    - index.qmd
+    - skript/introduction.qmd
+    - skript/basic_plot_types.qmd
+    - skript/adapting_plots.qmd
+    - skript/advanced_techniques.qmd
+    - skript/scientific_plotting.qmd

@@ -1,0 +1,63 @@
+# Erweiterte Techniken in Matplotlib
+
+In diesem Kapitel betrachten wir einige fortgeschrittene Funktionen von Matplotlib, die für die wissenschaftliche Datenvisualisierung besonders nützlich sind.
+
+## 1. Logarithmische Skalen
+Logarithmische Skalen werden oft verwendet, wenn Werte große Größenordnungen umfassen.
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+x = np.logspace(0.1, 2, 100)
+y = np.log10(x)
+
+plt.plot(x, y, label='log10(x)', color='b')
+plt.xscale('log')
+plt.xlabel('X-Wert (log-Skala)')
+plt.ylabel('Y-Wert')
+plt.title('Logarithmische Skalierung')
+plt.legend()
+plt.grid(True, which='both', linestyle='--', alpha=0.7)
+plt.show()
+```
+
+## 2. Twin-Achsen für verschiedene Skalierungen
+Manchmal möchte man zwei verschiedene y-Achsen in einem Plot darstellen.
+
+```{python}
+x = np.linspace(0, 10, 100)
+y1 = np.sin(x)
+y2 = np.exp(x / 3)
+
+fig, ax1 = plt.subplots()
+ax2 = ax1.twinx()
+ax1.plot(x, y1, 'g-', label='sin(x)')
+ax2.plot(x, y2, 'b--', label='exp(x/3)')
+
+ax1.set_xlabel('X-Wert')
+ax1.set_ylabel('Sinus', color='g')
+ax2.set_ylabel('Exponentiell', color='b')
+ax1.set_title('Twin-Achsen für unterschiedliche Skalierungen')
+plt.show()
+```
+
+## 3. Annotationen in Diagrammen
+Wichtige Punkte oder Werte in einem Diagramm können mit Annotationen hervorgehoben werden.
+
+```{python}
+x = np.linspace(0, 10, 100)
+y = np.sin(x)
+
+plt.plot(x, y, label='sin(x)')
+plt.xlabel('X-Wert')
+plt.ylabel('Amplitude')
+plt.title('Annotationen in Matplotlib')
+plt.annotate('Maximalwert', xy=(np.pi/2, 1), xytext=(2, 1.2),
+             arrowprops=dict(facecolor='red', shrink=0.05))
+plt.legend()
+plt.show()
+```
+
+## Fazit
+Diese erweiterten Funktionen helfen dabei, wissenschaftliche Plots noch informativer zu gestalten. Im nächsten Kapitel werden wir Best Practices und typische Fehler in der wissenschaftlichen Visualisierung betrachten.

@@ -1,0 +1,40 @@
+# Einführung in Matplotlib
+
+Matplotlib ist eine der bekanntesten Bibliotheken zur Datenvisualisierung in Python. Sie ermöglicht das Erstellen statischer, animierter und interaktiver Diagramme mit hoher Flexibilität. 
+
+## Warum Matplotlib?
+- **Breite Unterstützung:** Funktioniert mit NumPy, Pandas und SciPy.
+- **Hohe Anpassbarkeit:** Vollständige Kontrolle über Diagramme.
+- **Integration in Jupyter Notebooks:** Ideal für interaktive Datenanalyse.
+- **Kompatibilität:** Unterstützt verschiedene Ausgabeformate (PNG, SVG, PDF etc.).
+
+## Alternativen zu Matplotlib
+Während Matplotlib leistungsstark ist, gibt es Alternativen, die für bestimmte Zwecke besser geeignet sein können:
+- **Seaborn:** Basiert auf Matplotlib, erleichtert statistische Visualisierung.
+- **Plotly:** Erzeugt interaktive Plots, gut für Dashboards.
+- **Bokeh:** Ideal für Web-Anwendungen mit interaktiven Visualisierungen.
+
+## Erstes Beispiel: Einfache Linie plotten
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Beispiel-Daten
+t = np.linspace(0, 10, 100)
+y = np.sin(t)
+
+# Erstellen des Plots
+plt.plot(t, y, label='sin(t)')
+plt.xlabel('Zeit (s)')
+plt.ylabel('Amplitude')
+plt.title('Einfaches Linien-Diagramm')
+plt.legend()
+plt.show()
+```
+
+Dieses einfache Beispiel zeigt, wie man mit Matplotlib eine **Sinuskurve** visualisieren kann. 
+
+## Nächste Schritte
+Im nächsten Kapitel werden wir uns mit den verschiedenen Diagrammtypen beschäftigen, die Matplotlib bietet.
+

@@ -1,0 +1,332 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Anwendungsbaustein - Auswertung von fds-Daten",
+    "section": "",
+    "text": "Preamble",
+    "crumbs": [
+      "Preamble"
+    ]
+  },
+  {
+    "objectID": "index.html#voraussetzungen",
+    "href": "index.html#voraussetzungen",
+    "title": "Anwendungsbaustein - Auswertung von fds-Daten",
+    "section": "Voraussetzungen",
+    "text": "Voraussetzungen\n\nGrundlagen Python\nEinbinden von zusätzlichen Paketen",
+    "crumbs": [
+      "Preamble"
+    ]
+  },
+  {
+    "objectID": "index.html#verwendete-pakete-und-datensätze",
+    "href": "index.html#verwendete-pakete-und-datensätze",
+    "title": "Anwendungsbaustein - Auswertung von fds-Daten",
+    "section": "Verwendete Pakete und Datensätze",
+    "text": "Verwendete Pakete und Datensätze\n\nmatplotlib",
+    "crumbs": [
+      "Preamble"
+    ]
+  },
+  {
+    "objectID": "index.html#bearbeitungszeit",
+    "href": "index.html#bearbeitungszeit",
+    "title": "Anwendungsbaustein - Auswertung von fds-Daten",
+    "section": "Bearbeitungszeit",
+    "text": "Bearbeitungszeit\nGeschätzte Bearbeitungszeit: 1h",
+    "crumbs": [
+      "Preamble"
+    ]
+  },
+  {
+    "objectID": "index.html#lernziele",
+    "href": "index.html#lernziele",
+    "title": "Anwendungsbaustein - Auswertung von fds-Daten",
+    "section": "Lernziele",
+    "text": "Lernziele\n\nEinleitung: wie visualisiere ich Daten in Python\nAnpassen von Plots\nDo’s & Dont’s für wissenschaftliche Plots",
+    "crumbs": [
+      "Preamble"
+    ]
+  },
+  {
+    "objectID": "skript/introduction.html",
+    "href": "skript/introduction.html",
+    "title": "1  Einführung in Matplotlib",
+    "section": "",
+    "text": "1.1 Warum Matplotlib?\nMatplotlib ist eine der bekanntesten Bibliotheken zur Datenvisualisierung in Python. Sie ermöglicht das Erstellen statischer, animierter und interaktiver Diagramme mit hoher Flexibilität.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einführung in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/introduction.html#warum-matplotlib",
+    "href": "skript/introduction.html#warum-matplotlib",
+    "title": "1  Einführung in Matplotlib",
+    "section": "",
+    "text": "Breite Unterstützung: Funktioniert mit NumPy, Pandas und SciPy.\nHohe Anpassbarkeit: Vollständige Kontrolle über Diagramme.\nIntegration in Jupyter Notebooks: Ideal für interaktive Datenanalyse.\nKompatibilität: Unterstützt verschiedene Ausgabeformate (PNG, SVG, PDF etc.).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einführung in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/introduction.html#alternativen-zu-matplotlib",
+    "href": "skript/introduction.html#alternativen-zu-matplotlib",
+    "title": "1  Einführung in Matplotlib",
+    "section": "1.2 Alternativen zu Matplotlib",
+    "text": "1.2 Alternativen zu Matplotlib\nWährend Matplotlib leistungsstark ist, gibt es Alternativen, die für bestimmte Zwecke besser geeignet sein können: - Seaborn: Basiert auf Matplotlib, erleichtert statistische Visualisierung. - Plotly: Erzeugt interaktive Plots, gut für Dashboards. - Bokeh: Ideal für Web-Anwendungen mit interaktiven Visualisierungen.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einführung in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/introduction.html#erstes-beispiel-einfache-linie-plotten",
+    "href": "skript/introduction.html#erstes-beispiel-einfache-linie-plotten",
+    "title": "1  Einführung in Matplotlib",
+    "section": "1.3 Erstes Beispiel: Einfache Linie plotten",
+    "text": "1.3 Erstes Beispiel: Einfache Linie plotten\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n# Beispiel-Daten\nt = np.linspace(0, 10, 100)\ny = np.sin(t)\n\n# Erstellen des Plots\nplt.plot(t, y, label='sin(t)')\nplt.xlabel('Zeit (s)')\nplt.ylabel('Amplitude')\nplt.title('Einfaches Linien-Diagramm')\nplt.legend()\nplt.show()\nDieses einfache Beispiel zeigt, wie man mit Matplotlib eine Sinuskurve visualisieren kann.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einführung in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/introduction.html#nächste-schritte",
+    "href": "skript/introduction.html#nächste-schritte",
+    "title": "1  Einführung in Matplotlib",
+    "section": "1.4 Nächste Schritte",
+    "text": "1.4 Nächste Schritte\nIm nächsten Kapitel werden wir uns mit den verschiedenen Diagrammtypen beschäftigen, die Matplotlib bietet.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Einführung in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/basic_plot_types.html",
+    "href": "skript/basic_plot_types.html",
+    "title": "2  Diagrammtypen in Matplotlib",
+    "section": "",
+    "text": "2.1 1. Liniendiagramme (plt.plot())\nMatplotlib bietet eine Vielzahl von Diagrammtypen, die für unterschiedliche Zwecke geeignet sind. In diesem Kapitel werden die wichtigsten Diagrammtypen vorgestellt und ihre Anwendungsfälle erklärt.\nLiniendiagramme eignen sich hervorragend zur Darstellung von Trends über Zeit.\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nt = np.linspace(0, 10, 100)\ny = np.sin(t)\n\nplt.plot(t, y, label='sin(t)', color='b')\nplt.xlabel('Zeit (s)')\nplt.ylabel('Amplitude')\nplt.title('Liniendiagramm')\nplt.legend()\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Diagrammtypen in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/basic_plot_types.html#streudiagramme-plt.scatter",
+    "href": "skript/basic_plot_types.html#streudiagramme-plt.scatter",
+    "title": "2  Diagrammtypen in Matplotlib",
+    "section": "2.2 2. Streudiagramme (plt.scatter())",
+    "text": "2.2 2. Streudiagramme (plt.scatter())\nStreudiagramme werden verwendet, um Zusammenhänge zwischen zwei Variablen darzustellen.\n\nx = np.random.rand(50)\ny = np.random.rand(50)\n\nplt.scatter(x, y, color='r', alpha=0.5)\nplt.xlabel('Variable X')\nplt.ylabel('Variable Y')\nplt.title('Streudiagramm')\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Diagrammtypen in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/basic_plot_types.html#balkendiagramme-plt.bar",
+    "href": "skript/basic_plot_types.html#balkendiagramme-plt.bar",
+    "title": "2  Diagrammtypen in Matplotlib",
+    "section": "2.3 3. Balkendiagramme (plt.bar())",
+    "text": "2.3 3. Balkendiagramme (plt.bar())\nBalkendiagramme eignen sich zur Darstellung kategorialer Daten.\n\nkategorien = ['A', 'B', 'C', 'D']\nwerte = [3, 7, 1, 5]\n\nplt.bar(kategorien, werte, color='g')\nplt.xlabel('Kategorien')\nplt.ylabel('Wert')\nplt.title('Balkendiagramm')\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Diagrammtypen in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/basic_plot_types.html#histogramme-plt.hist",
+    "href": "skript/basic_plot_types.html#histogramme-plt.hist",
+    "title": "2  Diagrammtypen in Matplotlib",
+    "section": "2.4 4. Histogramme (plt.hist())",
+    "text": "2.4 4. Histogramme (plt.hist())\nHistogramme zeigen die Verteilung numerischer Daten.\n\ndaten = np.random.randn(1000)\nplt.hist(daten, bins=30, color='purple', alpha=0.7)\nplt.xlabel('Wert')\nplt.ylabel('Häufigkeit')\nplt.title('Histogramm')\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Diagrammtypen in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/basic_plot_types.html#boxplots-plt.boxplot",
+    "href": "skript/basic_plot_types.html#boxplots-plt.boxplot",
+    "title": "2  Diagrammtypen in Matplotlib",
+    "section": "2.5 5. Boxplots (plt.boxplot())",
+    "text": "2.5 5. Boxplots (plt.boxplot())\nBoxplots helfen, Ausreißer und die Verteilung von Daten zu visualisieren.\n\ndaten = [np.random.randn(100) for _ in range(4)]\nplt.boxplot(daten, labels=['A', 'B', 'C', 'D'])\nplt.ylabel('Wert')\nplt.title('Boxplot')\nplt.show()\n\n/var/folders/p_/ks3trxjx0jd839_g4g0vm4nc0000gn/T/ipykernel_7735/2728911591.py:2: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.\n  plt.boxplot(daten, labels=['A', 'B', 'C', 'D'])",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Diagrammtypen in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/basic_plot_types.html#heatmaps-plt.imshow",
+    "href": "skript/basic_plot_types.html#heatmaps-plt.imshow",
+    "title": "2  Diagrammtypen in Matplotlib",
+    "section": "2.6 6. Heatmaps (plt.imshow())",
+    "text": "2.6 6. Heatmaps (plt.imshow())\nHeatmaps eignen sich zur Darstellung von 2D-Daten.\n\ndaten = np.random.rand(10, 10)\nplt.imshow(daten, cmap='coolwarm', interpolation='nearest')\nplt.colorbar()\nplt.title('Heatmap')\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Diagrammtypen in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/basic_plot_types.html#fazit",
+    "href": "skript/basic_plot_types.html#fazit",
+    "title": "2  Diagrammtypen in Matplotlib",
+    "section": "2.7 Fazit",
+    "text": "2.7 Fazit\nDie Wahl des richtigen Diagrammtyps hängt von der Art der Daten und der gewünschten Darstellung ab. Im nächsten Kapitel werden wir uns mit der Anpassung und Gestaltung von Plots beschäftigen.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Diagrammtypen in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/adapting_plots.html",
+    "href": "skript/adapting_plots.html",
+    "title": "3  Anpassung und Gestaltung von Plots in Matplotlib",
+    "section": "",
+    "text": "3.1 1. Achsentitel und Diagrammtitel\nEin gut gestaltetes Diagramm verbessert die Lesbarkeit und Verständlichkeit der dargestellten Daten. In diesem Kapitel werden wir verschiedene Möglichkeiten zur Anpassung und Gestaltung von Plots in Matplotlib erkunden.\nKlare Achsen- und Diagrammtitel sind essenziell für die Verständlichkeit eines Plots.\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nt = np.linspace(0, 10, 100)\ny = np.sin(t)\n\nplt.plot(t, y, label='sin(t)', color='b')\nplt.xlabel('Zeit (s)', fontsize=12)\nplt.ylabel('Amplitude', fontsize=12)\nplt.title('Liniendiagramm mit Beschriftung', fontsize=14)\nplt.legend()\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Anpassung und Gestaltung von Plots in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/adapting_plots.html#anpassung-der-achsen",
+    "href": "skript/adapting_plots.html#anpassung-der-achsen",
+    "title": "3  Anpassung und Gestaltung von Plots in Matplotlib",
+    "section": "3.2 2. Anpassung der Achsen",
+    "text": "3.2 2. Anpassung der Achsen\nDie Skalierung der Achsen sollte sinnvoll gewählt werden, um die Daten bestmöglich darzustellen.\n\nplt.plot(t, y, label='sin(t)', color='b')\nplt.xlabel('Zeit (s)')\nplt.ylabel('Amplitude')\nplt.xlim(0, 10)\nplt.ylim(-1.2, 1.2)\nplt.grid(True, linestyle='--', alpha=0.7)\nplt.title('Liniendiagramm mit angepassten Achsen')\nplt.legend()\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Anpassung und Gestaltung von Plots in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/adapting_plots.html#farben-und-linienstile",
+    "href": "skript/adapting_plots.html#farben-und-linienstile",
+    "title": "3  Anpassung und Gestaltung von Plots in Matplotlib",
+    "section": "3.3 3. Farben und Linienstile",
+    "text": "3.3 3. Farben und Linienstile\nFarben und Linienstile helfen dabei, wichtige Informationen im Plot hervorzuheben.\n\n3.3.1 Wichtige Farben (Standardfarben in Matplotlib)\n\n\n\nFarbe\nKürzel\nBeschreibung\n\n\n\n\nBlau\n‘b’\nblue\n\n\nGrün\n‘g’\ngreen\n\n\nRot\n‘r’\nred\n\n\nCyan\n‘c’\ncyan\n\n\nMagenta\n‘m’\nmagenta\n\n\nGelb\n‘y’\nyellow\n\n\nSchwarz\n‘k’\nblack\n\n\nWeiß\n‘w’\nwhite\n\n\n\n\n\n3.3.2 Wichtige Linienstile\n\n\n\nLinienstil\nKürzel\nBeschreibung\n\n\n\n\nDurchgezogen\n‘-’\nStandardlinie\n\n\nGestrichelt\n‘–’\nlange Striche\n\n\nGepunktet\n‘:’\nnur Punkte\n\n\nStrich-Punkt\n‘-.’\nabwechselnd Strich-Punkt\n\n\n\n\nplt.plot(t, np.sin(t), linestyle='-', color='r', label='sin(t)')\nplt.plot(t, np.cos(t), linestyle='--', color='g', label='cos(t)')\nplt.xlabel('Zeit (s)')\nplt.ylabel('Amplitude')\nplt.title('Anpassung von Farben und Linienstilen')\nplt.legend()\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Anpassung und Gestaltung von Plots in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/adapting_plots.html#mehrere-plots-mit-subplots",
+    "href": "skript/adapting_plots.html#mehrere-plots-mit-subplots",
+    "title": "3  Anpassung und Gestaltung von Plots in Matplotlib",
+    "section": "3.4 4. Mehrere Plots mit Subplots",
+    "text": "3.4 4. Mehrere Plots mit Subplots\nManchmal ist es sinnvoll, mehrere Diagramme in einer Abbildung darzustellen.\n\nfig, axs = plt.subplots(2, 1, figsize=(6, 6))\naxs[0].plot(t, np.sin(t), color='b')\naxs[0].set_title('Sinusfunktion')\naxs[1].plot(t, np.cos(t), color='r')\naxs[1].set_title('Kosinusfunktion')\nplt.tight_layout()\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Anpassung und Gestaltung von Plots in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/adapting_plots.html#speichern-von-plots",
+    "href": "skript/adapting_plots.html#speichern-von-plots",
+    "title": "3  Anpassung und Gestaltung von Plots in Matplotlib",
+    "section": "3.5 5. Speichern von Plots",
+    "text": "3.5 5. Speichern von Plots\nMan kann Diagramme in verschiedenen Formaten speichern.\n\nplt.plot(t, y, label='sin(t)', color='b')\nplt.xlabel('Zeit (s)')\nplt.ylabel('Amplitude')\nplt.title('Speicherung eines Plots')\nplt.legend()\nplt.savefig('mein_plot.png', dpi=300)\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Anpassung und Gestaltung von Plots in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/adapting_plots.html#fazit",
+    "href": "skript/adapting_plots.html#fazit",
+    "title": "3  Anpassung und Gestaltung von Plots in Matplotlib",
+    "section": "3.6 Fazit",
+    "text": "3.6 Fazit\nDurch geschickte Anpassungen lassen sich wissenschaftliche Plots deutlich verbessern. Im nächsten Kapitel werden wir uns mit erweiterten Techniken wie logarithmischen Skalen und Annotationen beschäftigen.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Anpassung und Gestaltung von Plots in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/advanced_techniques.html",
+    "href": "skript/advanced_techniques.html",
+    "title": "4  Erweiterte Techniken in Matplotlib",
+    "section": "",
+    "text": "4.1 1. Logarithmische Skalen\nIn diesem Kapitel betrachten wir einige fortgeschrittene Funktionen von Matplotlib, die für die wissenschaftliche Datenvisualisierung besonders nützlich sind.\nLogarithmische Skalen werden oft verwendet, wenn Werte große Größenordnungen umfassen.\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.logspace(0.1, 2, 100)\ny = np.log10(x)\n\nplt.plot(x, y, label='log10(x)', color='b')\nplt.xscale('log')\nplt.xlabel('X-Wert (log-Skala)')\nplt.ylabel('Y-Wert')\nplt.title('Logarithmische Skalierung')\nplt.legend()\nplt.grid(True, which='both', linestyle='--', alpha=0.7)\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Erweiterte Techniken in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/advanced_techniques.html#twin-achsen-für-verschiedene-skalierungen",
+    "href": "skript/advanced_techniques.html#twin-achsen-für-verschiedene-skalierungen",
+    "title": "4  Erweiterte Techniken in Matplotlib",
+    "section": "4.2 2. Twin-Achsen für verschiedene Skalierungen",
+    "text": "4.2 2. Twin-Achsen für verschiedene Skalierungen\nManchmal möchte man zwei verschiedene y-Achsen in einem Plot darstellen.\n\nx = np.linspace(0, 10, 100)\ny1 = np.sin(x)\ny2 = np.exp(x / 3)\n\nfig, ax1 = plt.subplots()\nax2 = ax1.twinx()\nax1.plot(x, y1, 'g-', label='sin(x)')\nax2.plot(x, y2, 'b--', label='exp(x/3)')\n\nax1.set_xlabel('X-Wert')\nax1.set_ylabel('Sinus', color='g')\nax2.set_ylabel('Exponentiell', color='b')\nax1.set_title('Twin-Achsen für unterschiedliche Skalierungen')\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Erweiterte Techniken in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/advanced_techniques.html#annotationen-in-diagrammen",
+    "href": "skript/advanced_techniques.html#annotationen-in-diagrammen",
+    "title": "4  Erweiterte Techniken in Matplotlib",
+    "section": "4.3 3. Annotationen in Diagrammen",
+    "text": "4.3 3. Annotationen in Diagrammen\nWichtige Punkte oder Werte in einem Diagramm können mit Annotationen hervorgehoben werden.\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.plot(x, y, label='sin(x)')\nplt.xlabel('X-Wert')\nplt.ylabel('Amplitude')\nplt.title('Annotationen in Matplotlib')\nplt.annotate('Maximalwert', xy=(np.pi/2, 1), xytext=(2, 1.2),\n             arrowprops=dict(facecolor='red', shrink=0.05))\nplt.legend()\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Erweiterte Techniken in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/advanced_techniques.html#fazit",
+    "href": "skript/advanced_techniques.html#fazit",
+    "title": "4  Erweiterte Techniken in Matplotlib",
+    "section": "4.4 Fazit",
+    "text": "4.4 Fazit\nDiese erweiterten Funktionen helfen dabei, wissenschaftliche Plots noch informativer zu gestalten. Im nächsten Kapitel werden wir Best Practices und typische Fehler in der wissenschaftlichen Visualisierung betrachten.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Erweiterte Techniken in Matplotlib</span>"
+    ]
+  },
+  {
+    "objectID": "skript/scientific_plotting.html",
+    "href": "skript/scientific_plotting.html",
+    "title": "5  Best Practices in Matplotlib: Fehler und Verbesserungen",
+    "section": "",
+    "text": "5.1 1. Fehlende Beschriftungen\nIn diesem Kapitel zeigen wir für häufige Problemstellungen jeweils ein schlechtes und ein verbessertes Beispiel.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Best Practices in Matplotlib: Fehler und Verbesserungen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/scientific_plotting.html#fehlende-beschriftungen",
+    "href": "skript/scientific_plotting.html#fehlende-beschriftungen",
+    "title": "5  Best Practices in Matplotlib: Fehler und Verbesserungen",
+    "section": "",
+    "text": "5.1.1 ❌ Schlechtes Beispiel\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nx = np.linspace(0, 10, 100)\ny = np.sin(x)\n\nplt.plot(x, y)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n5.1.2 ✅ Besseres Beispiel\n\nplt.plot(x, y, label='sin(x)', color='b')\nplt.xlabel('Zeit (s)')\nplt.ylabel('Amplitude')\nplt.title('Sinuskurve')\nplt.legend()\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Best Practices in Matplotlib: Fehler und Verbesserungen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/scientific_plotting.html#ungünstige-farbwahl",
+    "href": "skript/scientific_plotting.html#ungünstige-farbwahl",
+    "title": "5  Best Practices in Matplotlib: Fehler und Verbesserungen",
+    "section": "5.2 2. Ungünstige Farbwahl",
+    "text": "5.2 2. Ungünstige Farbwahl\n\n5.2.1 ❌ Schlechtes Beispiel\n\nplt.plot(x, y, color='yellow')\nplt.show()\n\n\n\n\n\n\n\n\n\n\n5.2.2 ✅ Besseres Beispiel\n\nplt.plot(x, y, color='darkblue')\nplt.grid(True, linestyle='--', alpha=0.7)\nplt.title('Gute Kontraste für bessere Lesbarkeit')\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Best Practices in Matplotlib: Fehler und Verbesserungen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/scientific_plotting.html#keine-sinnvolle-achsenskalierung",
+    "href": "skript/scientific_plotting.html#keine-sinnvolle-achsenskalierung",
+    "title": "5  Best Practices in Matplotlib: Fehler und Verbesserungen",
+    "section": "5.3 3. Keine sinnvolle Achsenskalierung",
+    "text": "5.3 3. Keine sinnvolle Achsenskalierung\n\n5.3.1 ❌ Schlechtes Beispiel\n\nplt.plot(x, y)\nplt.ylim(0.5, 1)\nplt.show()\n\n\n\n\n\n\n\n\n\n\n5.3.2 ✅ Besseres Beispiel\n\nplt.plot(x, y)\nplt.ylim(-1.2, 1.2)\nplt.xlim(0, 10)\nplt.grid(True)\nplt.title('Sinnvolle Achsenskalierung')\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Best Practices in Matplotlib: Fehler und Verbesserungen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/scientific_plotting.html#überladung-durch-zu-viele-linien",
+    "href": "skript/scientific_plotting.html#überladung-durch-zu-viele-linien",
+    "title": "5  Best Practices in Matplotlib: Fehler und Verbesserungen",
+    "section": "5.4 4. Überladung durch zu viele Linien",
+    "text": "5.4 4. Überladung durch zu viele Linien\n\n5.4.1 ❌ Schlechtes Beispiel\n\nfor i in range(10):\n    plt.plot(x, np.sin(x + i * 0.2))\nplt.show()\n\n\n\n\n\n\n\n\n\n\n5.4.2 ✅ Besseres Beispiel\n\nplt.plot(x, np.sin(x), label='sin(x)')\nplt.plot(x, np.cos(x), label='cos(x)')\nplt.legend()\nplt.title('Weniger ist mehr: Reduzierte Informationsdichte')\nplt.grid(True)\nplt.show()",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Best Practices in Matplotlib: Fehler und Verbesserungen</span>"
+    ]
+  },
+  {
+    "objectID": "skript/scientific_plotting.html#fazit",
+    "href": "skript/scientific_plotting.html#fazit",
+    "title": "5  Best Practices in Matplotlib: Fehler und Verbesserungen",
+    "section": "5.5 Fazit",
+    "text": "5.5 Fazit\nGute Plots zeichnen sich durch klare Beschriftungen, gute Lesbarkeit und eine sinnvolle Informationsdichte aus.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Best Practices in Matplotlib: Fehler und Verbesserungen</span>"
+    ]
+  }
+]

@@ -1,0 +1,98 @@
+# Anpassung und Gestaltung von Plots in Matplotlib
+
+Ein gut gestaltetes Diagramm verbessert die Lesbarkeit und Verständlichkeit der dargestellten Daten. In diesem Kapitel werden wir verschiedene Möglichkeiten zur Anpassung und Gestaltung von Plots in Matplotlib erkunden.
+
+## 1. Achsentitel und Diagrammtitel
+Klare Achsen- und Diagrammtitel sind essenziell für die Verständlichkeit eines Plots.
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+t = np.linspace(0, 10, 100)
+y = np.sin(t)
+
+plt.plot(t, y, label='sin(t)', color='b')
+plt.xlabel('Zeit (s)', fontsize=12)
+plt.ylabel('Amplitude', fontsize=12)
+plt.title('Liniendiagramm mit Beschriftung', fontsize=14)
+plt.legend()
+plt.show()
+```
+
+## 2. Anpassung der Achsen
+Die Skalierung der Achsen sollte sinnvoll gewählt werden, um die Daten bestmöglich darzustellen.
+
+```{python}
+plt.plot(t, y, label='sin(t)', color='b')
+plt.xlabel('Zeit (s)')
+plt.ylabel('Amplitude')
+plt.xlim(0, 10)
+plt.ylim(-1.2, 1.2)
+plt.grid(True, linestyle='--', alpha=0.7)
+plt.title('Liniendiagramm mit angepassten Achsen')
+plt.legend()
+plt.show()
+```
+
+## 3. Farben und Linienstile
+Farben und Linienstile helfen dabei, wichtige Informationen im Plot hervorzuheben.
+
+### Wichtige Farben (Standardfarben in Matplotlib)
+| Farbe      | Kürzel | Beschreibung      |
+|------------|--------|-------------------|
+| Blau       | 'b'    | blue              |
+| Grün       | 'g'    | green             |
+| Rot        | 'r'    | red               |
+| Cyan       | 'c'    | cyan              |
+| Magenta    | 'm'    | magenta           |
+| Gelb       | 'y'    | yellow            |
+| Schwarz    | 'k'    | black             |
+| Weiß       | 'w'    | white             |
+
+### Wichtige Linienstile
+| Linienstil    | Kürzel  | Beschreibung           |
+|---------------|---------|------------------------|
+| Durchgezogen  | '-'     | Standardlinie          |
+| Gestrichelt   | '--'    | lange Striche          |
+| Gepunktet     | ':'     | nur Punkte             |
+| Strich-Punkt  | '-.'    | abwechselnd Strich-Punkt |
+
+```{python}
+plt.plot(t, np.sin(t), linestyle='-', color='r', label='sin(t)')
+plt.plot(t, np.cos(t), linestyle='--', color='g', label='cos(t)')
+plt.xlabel('Zeit (s)')
+plt.ylabel('Amplitude')
+plt.title('Anpassung von Farben und Linienstilen')
+plt.legend()
+plt.show()
+```
+
+## 4. Mehrere Plots mit Subplots
+Manchmal ist es sinnvoll, mehrere Diagramme in einer Abbildung darzustellen.
+
+```{python}
+fig, axs = plt.subplots(2, 1, figsize=(6, 6))
+axs[0].plot(t, np.sin(t), color='b')
+axs[0].set_title('Sinusfunktion')
+axs[1].plot(t, np.cos(t), color='r')
+axs[1].set_title('Kosinusfunktion')
+plt.tight_layout()
+plt.show()
+```
+
+## 5. Speichern von Plots
+Man kann Diagramme in verschiedenen Formaten speichern.
+
+```{python}
+plt.plot(t, y, label='sin(t)', color='b')
+plt.xlabel('Zeit (s)')
+plt.ylabel('Amplitude')
+plt.title('Speicherung eines Plots')
+plt.legend()
+plt.savefig('mein_plot.png', dpi=300)
+plt.show()
+```
+
+## Fazit
+Durch geschickte Anpassungen lassen sich wissenschaftliche Plots deutlich verbessern. Im nächsten Kapitel werden wir uns mit erweiterten Techniken wie logarithmischen Skalen und Annotationen beschäftigen.

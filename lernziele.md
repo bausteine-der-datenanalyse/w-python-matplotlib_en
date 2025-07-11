@@ -1,0 +1,3 @@
+- Einleitung: wie visualisiere ich Daten in Python
+- Anpassen von Plots
+- Do's & Dont's für wissenschaftliche Plots
