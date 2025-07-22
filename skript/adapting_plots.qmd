@@ -1,9 +1,9 @@
-# Anpassung und Gestaltung von Plots in Matplotlib
+# Customization and Adapting of Plots in Matplotlib
 
-Ein gut gestaltetes Diagramm verbessert die Lesbarkeit und Verständlichkeit der dargestellten Daten. In diesem Kapitel werden wir verschiedene Möglichkeiten zur Anpassung und Gestaltung von Plots in Matplotlib erkunden.
+A well-designed plot improves the readability and comprehension of the data presented. In this chapter, we will explore various ways to customize and adapt plots using Matplotlib.
 
-## 1. Achsentitel und Diagrammtitel
-Klare Achsen- und Diagrammtitel sind essenziell für die Verständlichkeit eines Plots.
+## 1. Axis Labels and Plot Title
+Clear axis and plot titles are essential for understanding a plot.
 
 ```{python}
 import matplotlib.pyplot as plt
@@ -13,86 +13,86 @@ t = np.linspace(0, 10, 100)
 y = np.sin(t)
 
 plt.plot(t, y, label='sin(t)', color='b')
-plt.xlabel('Zeit (s)', fontsize=12)
+plt.xlabel('Time (s)', fontsize=12)
 plt.ylabel('Amplitude', fontsize=12)
-plt.title('Liniendiagramm mit Beschriftung', fontsize=14)
+plt.title('Line Plot with Labels', fontsize=14)
 plt.legend()
 plt.show()
 ```
 
-## 2. Anpassung der Achsen
-Die Skalierung der Achsen sollte sinnvoll gewählt werden, um die Daten bestmöglich darzustellen.
+## 2. Adjusting Axes
+The scaling of the axes should be chosen appropriately to best represent the data.
 
 ```{python}
 plt.plot(t, y, label='sin(t)', color='b')
-plt.xlabel('Zeit (s)')
+plt.xlabel('Time (s)')
 plt.ylabel('Amplitude')
 plt.xlim(0, 10)
 plt.ylim(-1.2, 1.2)
 plt.grid(True, linestyle='--', alpha=0.7)
-plt.title('Liniendiagramm mit angepassten Achsen')
+plt.title('Line Plot with Adjusted Axes')
 plt.legend()
 plt.show()
 ```
 
-## 3. Farben und Linienstile
-Farben und Linienstile helfen dabei, wichtige Informationen im Plot hervorzuheben.
+## 3. Colors and Line Styles
+Colors and line styles help to highlight important information in the plot.
 
-### Wichtige Farben (Standardfarben in Matplotlib)
-| Farbe      | Kürzel | Beschreibung      |
-|------------|--------|-------------------|
-| Blau       | 'b'    | blue              |
-| Grün       | 'g'    | green             |
-| Rot        | 'r'    | red               |
-| Cyan       | 'c'    | cyan              |
-| Magenta    | 'm'    | magenta           |
-| Gelb       | 'y'    | yellow            |
-| Schwarz    | 'k'    | black             |
-| Weiß       | 'w'    | white             |
+### Common Colors (Default Colors in Matplotlib)
+| Color      | Code  | Description        |
+|------------|-------|--------------------|
+| Blue       | 'b'   | blue               |
+| Green      | 'g'   | green              |
+| Red        | 'r'   | red                |
+| Cyan       | 'c'   | cyan               |
+| Magenta    | 'm'   | magenta            |
+| Yellow     | 'y'   | yellow             |
+| Black      | 'k'   | black              |
+| White      | 'w'   | white              |
 
-### Wichtige Linienstile
-| Linienstil    | Kürzel  | Beschreibung           |
-|---------------|---------|------------------------|
-| Durchgezogen  | '-'     | Standardlinie          |
-| Gestrichelt   | '--'    | lange Striche          |
-| Gepunktet     | ':'     | nur Punkte             |
-| Strich-Punkt  | '-.'    | abwechselnd Strich-Punkt |
+### Common Line Styles
+| Line Style     | Code   | Description              |
+|----------------|--------|--------------------------|
+| Solid          | '-'    | default line             |
+| Dashed         | '--'   | long dashes              |
+| Dotted         | ':'    | only dots                |
+| Dash-dot       | '-.'   | alternating dash-dot     |
 
 ```{python}
 plt.plot(t, np.sin(t), linestyle='-', color='r', label='sin(t)')
 plt.plot(t, np.cos(t), linestyle='--', color='g', label='cos(t)')
-plt.xlabel('Zeit (s)')
+plt.xlabel('Time (s)')
 plt.ylabel('Amplitude')
-plt.title('Anpassung von Farben und Linienstilen')
+plt.title('Customization of Colors and Line Styles')
 plt.legend()
 plt.show()
 ```
 
-## 4. Mehrere Plots mit Subplots
-Manchmal ist es sinnvoll, mehrere Diagramme in einer Abbildung darzustellen.
+## 4. Multiple Plots with Subplots
+Sometimes it's useful to display multiple plots in a single figure.
 
 ```{python}
 fig, axs = plt.subplots(2, 1, figsize=(6, 6))
 axs[0].plot(t, np.sin(t), color='b')
-axs[0].set_title('Sinusfunktion')
+axs[0].set_title('Sine Function')
 axs[1].plot(t, np.cos(t), color='r')
-axs[1].set_title('Kosinusfunktion')
+axs[1].set_title('Cosine Function')
 plt.tight_layout()
 plt.show()
 ```
 
-## 5. Speichern von Plots
-Man kann Diagramme in verschiedenen Formaten speichern.
+## 5. Saving Plots
+Plots can be saved in various formats.
 
 ```{python}
 plt.plot(t, y, label='sin(t)', color='b')
-plt.xlabel('Zeit (s)')
+plt.xlabel('Time (s)')
 plt.ylabel('Amplitude')
-plt.title('Speicherung eines Plots')
+plt.title('Saving a Plot')
 plt.legend()
-plt.savefig('mein_plot.png', dpi=300)
+plt.savefig('my_plot.png', dpi=300)
 plt.show()
 ```
 
-## Fazit
-Durch geschickte Anpassungen lassen sich wissenschaftliche Plots deutlich verbessern. Im nächsten Kapitel werden wir uns mit erweiterten Techniken wie logarithmischen Skalen und Annotationen beschäftigen.
+## Conclusion
+With careful customization, scientific plots can be significantly improved. In the next chapter, we will explore advanced techniques such as logarithmic scales and annotations.

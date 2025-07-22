@@ -1,40 +1,39 @@
-# Einführung in Matplotlib
+# Introduction to Matplotlib
 
-Matplotlib ist eine der bekanntesten Bibliotheken zur Datenvisualisierung in Python. Sie ermöglicht das Erstellen statischer, animierter und interaktiver Diagramme mit hoher Flexibilität. 
+Matplotlib is one of the most well-known libraries for data visualization in Python. It allows the creation of static, animated, and interactive plots with high flexibility.
 
-## Warum Matplotlib?
-- **Breite Unterstützung:** Funktioniert mit NumPy, Pandas und SciPy.
-- **Hohe Anpassbarkeit:** Vollständige Kontrolle über Diagramme.
-- **Integration in Jupyter Notebooks:** Ideal für interaktive Datenanalyse.
-- **Kompatibilität:** Unterstützt verschiedene Ausgabeformate (PNG, SVG, PDF etc.).
+## Why Matplotlib?
+- **Broad Support:** Works well with NumPy, Pandas, and SciPy.
+- **High Customizability:** Full control over plots.
+- **Integration with Jupyter Notebooks:** Ideal for interactive data analysis.
+- **Compatibility:** Supports various output formats (PNG, SVG, PDF, etc.).
 
-## Alternativen zu Matplotlib
-Während Matplotlib leistungsstark ist, gibt es Alternativen, die für bestimmte Zwecke besser geeignet sein können:
-- **Seaborn:** Basiert auf Matplotlib, erleichtert statistische Visualisierung.
-- **Plotly:** Erzeugt interaktive Plots, gut für Dashboards.
-- **Bokeh:** Ideal für Web-Anwendungen mit interaktiven Visualisierungen.
+## Alternatives to Matplotlib
+While Matplotlib is powerful, there are alternatives that may be better suited for specific purposes:
+- **Seaborn:** Built on top of Matplotlib, simplifies statistical visualizations.
+- **Plotly:** Creates interactive plots, great for dashboards.
+- **Bokeh:** Ideal for web applications with interactive visualizations.
 
-## Erstes Beispiel: Einfache Linie plotten
+## First Example: Plotting a Simple Line
 
 ```python
 import matplotlib.pyplot as plt
 import numpy as np
 
-# Beispiel-Daten
+# Example data
 t = np.linspace(0, 10, 100)
 y = np.sin(t)
 
-# Erstellen des Plots
+# Create the plot
 plt.plot(t, y, label='sin(t)')
-plt.xlabel('Zeit (s)')
+plt.xlabel('Time (s)')
 plt.ylabel('Amplitude')
-plt.title('Einfaches Linien-Diagramm')
+plt.title('Simple Line Plot')
 plt.legend()
 plt.show()
 ```
 
-Dieses einfache Beispiel zeigt, wie man mit Matplotlib eine **Sinuskurve** visualisieren kann. 
+This simple example demonstrates how to visualize a **sine curve** using Matplotlib.
 
-## Nächste Schritte
-Im nächsten Kapitel werden wir uns mit den verschiedenen Diagrammtypen beschäftigen, die Matplotlib bietet.
-
+## Next Steps
+In the next chapter, we will explore the different types of plots that Matplotlib offers.

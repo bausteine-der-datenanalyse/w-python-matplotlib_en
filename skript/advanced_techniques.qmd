@@ -1,9 +1,9 @@
-# Erweiterte Techniken in Matplotlib
+# Advanced Techniques in Matplotlib
 
-In diesem Kapitel betrachten wir einige fortgeschrittene Funktionen von Matplotlib, die für die wissenschaftliche Datenvisualisierung besonders nützlich sind.
+In this chapter, we explore some advanced features of Matplotlib that are especially useful for scientific data visualization.
 
-## 1. Logarithmische Skalen
-Logarithmische Skalen werden oft verwendet, wenn Werte große Größenordnungen umfassen.
+## 1. Logarithmic Scales
+Logarithmic scales are often used when values span several orders of magnitude.
 
 ```{python}
 import matplotlib.pyplot as plt
@@ -14,16 +14,16 @@ y = np.log10(x)
 
 plt.plot(x, y, label='log10(x)', color='b')
 plt.xscale('log')
-plt.xlabel('X-Wert (log-Skala)')
-plt.ylabel('Y-Wert')
-plt.title('Logarithmische Skalierung')
+plt.xlabel('X Value (log scale)')
+plt.ylabel('Y Value')
+plt.title('Logarithmic Scaling')
 plt.legend()
 plt.grid(True, which='both', linestyle='--', alpha=0.7)
 plt.show()
 ```
 
-## 2. Twin-Achsen für verschiedene Skalierungen
-Manchmal möchte man zwei verschiedene y-Achsen in einem Plot darstellen.
+## 2. Twin Axes for Different Scales
+Sometimes you may want to display two different y-axes in one plot.
 
 ```{python}
 x = np.linspace(0, 10, 100)
@@ -35,29 +35,29 @@ ax2 = ax1.twinx()
 ax1.plot(x, y1, 'g-', label='sin(x)')
 ax2.plot(x, y2, 'b--', label='exp(x/3)')
 
-ax1.set_xlabel('X-Wert')
-ax1.set_ylabel('Sinus', color='g')
-ax2.set_ylabel('Exponentiell', color='b')
-ax1.set_title('Twin-Achsen für unterschiedliche Skalierungen')
+ax1.set_xlabel('X Value')
+ax1.set_ylabel('Sine', color='g')
+ax2.set_ylabel('Exponential', color='b')
+ax1.set_title('Twin Axes for Different Scales')
 plt.show()
 ```
 
-## 3. Annotationen in Diagrammen
-Wichtige Punkte oder Werte in einem Diagramm können mit Annotationen hervorgehoben werden.
+## 3. Annotations in Plots
+Important points or values in a plot can be highlighted using annotations.
 
 ```{python}
 x = np.linspace(0, 10, 100)
 y = np.sin(x)
 
 plt.plot(x, y, label='sin(x)')
-plt.xlabel('X-Wert')
+plt.xlabel('X Value')
 plt.ylabel('Amplitude')
-plt.title('Annotationen in Matplotlib')
-plt.annotate('Maximalwert', xy=(np.pi/2, 1), xytext=(2, 1.2),
+plt.title('Annotations in Matplotlib')
+plt.annotate('Maximum Value', xy=(np.pi/2, 1), xytext=(2, 1.2),
              arrowprops=dict(facecolor='red', shrink=0.05))
 plt.legend()
 plt.show()
 ```
 
-## Fazit
-Diese erweiterten Funktionen helfen dabei, wissenschaftliche Plots noch informativer zu gestalten. Im nächsten Kapitel werden wir Best Practices und typische Fehler in der wissenschaftlichen Visualisierung betrachten.
+## Conclusion
+These advanced features help make scientific plots more informative. In the next chapter, we will look at best practices and common mistakes in scientific visualization.

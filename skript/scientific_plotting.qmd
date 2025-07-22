@@ -1,9 +1,9 @@
-# Best Practices in Matplotlib: Fehler und Verbesserungen
+# Best Practices in Matplotlib: Common Mistakes and Improvements
 
-In diesem Kapitel zeigen wir für häufige Problemstellungen jeweils ein schlechtes und ein verbessertes Beispiel.
+In this chapter, we demonstrate a poor and an improved example for each common issue encountered when plotting with Matplotlib.
 
-## 1. Fehlende Beschriftungen
-### ❌ Schlechtes Beispiel
+## 1. Missing Labels
+### ❌ Bad Example
 ```{python}
 import matplotlib.pyplot as plt
 import numpy as np
@@ -15,66 +15,66 @@ plt.plot(x, y)
 plt.show()
 ```
 
-### ✅ Besseres Beispiel
+### ✅ Improved Example
 ```{python}
 plt.plot(x, y, label='sin(x)', color='b')
-plt.xlabel('Zeit (s)')
+plt.xlabel('Time (s)')
 plt.ylabel('Amplitude')
-plt.title('Sinuskurve')
+plt.title('Sine Curve')
 plt.legend()
 plt.show()
 ```
 
-## 2. Ungünstige Farbwahl
-### ❌ Schlechtes Beispiel
+## 2. Poor Color Choice
+### ❌ Bad Example
 ```{python}
 plt.plot(x, y, color='yellow')
 plt.show()
 ```
 
-### ✅ Besseres Beispiel
+### ✅ Improved Example
 ```{python}
 plt.plot(x, y, color='darkblue')
 plt.grid(True, linestyle='--', alpha=0.7)
-plt.title('Gute Kontraste für bessere Lesbarkeit')
+plt.title('Good Contrast for Better Readability')
 plt.show()
 ```
 
-## 3. Keine sinnvolle Achsenskalierung
-### ❌ Schlechtes Beispiel
+## 3. Unreasonable Axis Scaling
+### ❌ Bad Example
 ```{python}
 plt.plot(x, y)
 plt.ylim(0.5, 1)
 plt.show()
 ```
 
-### ✅ Besseres Beispiel
+### ✅ Improved Example
 ```{python}
 plt.plot(x, y)
 plt.ylim(-1.2, 1.2)
 plt.xlim(0, 10)
 plt.grid(True)
-plt.title('Sinnvolle Achsenskalierung')
+plt.title('Reasonable Axis Scaling')
 plt.show()
 ```
 
-## 4. Überladung durch zu viele Linien
-### ❌ Schlechtes Beispiel
+## 4. Overcrowded with Too Many Lines
+### ❌ Bad Example
 ```{python}
 for i in range(10):
     plt.plot(x, np.sin(x + i * 0.2))
 plt.show()
 ```
 
-### ✅ Besseres Beispiel
+### ✅ Improved Example
 ```{python}
 plt.plot(x, np.sin(x), label='sin(x)')
 plt.plot(x, np.cos(x), label='cos(x)')
 plt.legend()
-plt.title('Weniger ist mehr: Reduzierte Informationsdichte')
+plt.title('Less is More: Reduced Information Density')
 plt.grid(True)
 plt.show()
 ```
 
-## Fazit
-Gute Plots zeichnen sich durch klare Beschriftungen, gute Lesbarkeit und eine sinnvolle Informationsdichte aus.
+## Conclusion
+Good plots are characterized by clear labels, good readability, and a reasonable amount of information.
