@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Erweiterte Techniken in Matplotlib – Anwendungsbaustein - Auswertung von fds-Daten</title>
+<title>4&nbsp; Advanced Techniques in Matplotlib – Anwendungsbaustein - Auswertung von fds-Daten</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -74,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-173c08f0120535b1b8a0ba1fc00bb1ae.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-81892d67c6241247f2c4f8ce88ed6504.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../skript/advanced_techniques.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Erweiterte Techniken in Matplotlib</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../skript/advanced_techniques.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Advanced Techniques in Matplotlib</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -153,31 +153,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Einführung in Matplotlib</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Matplotlib</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/basic_plot_types.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Diagrammtypen in Matplotlib</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Plot Types in Matplotlib</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/adapting_plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anpassung und Gestaltung von Plots in Matplotlib</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Customization and Adapting of Plots in Matplotlib</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/advanced_techniques.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Erweiterte Techniken in Matplotlib</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Advanced Techniques in Matplotlib</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/scientific_plotting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Best Practices in Matplotlib: Fehler und Verbesserungen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Best Practices in Matplotlib: Common Mistakes and Improvements</span></span></a>
   </div>
 </li>
     </ul>
@@ -190,10 +190,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#logarithmische-skalen" id="toc-logarithmische-skalen" class="nav-link active" data-scroll-target="#logarithmische-skalen"><span class="header-section-number">4.1</span> 1. Logarithmische Skalen</a></li>
-  <li><a href="#twin-achsen-für-verschiedene-skalierungen" id="toc-twin-achsen-für-verschiedene-skalierungen" class="nav-link" data-scroll-target="#twin-achsen-für-verschiedene-skalierungen"><span class="header-section-number">4.2</span> 2. Twin-Achsen für verschiedene Skalierungen</a></li>
-  <li><a href="#annotationen-in-diagrammen" id="toc-annotationen-in-diagrammen" class="nav-link" data-scroll-target="#annotationen-in-diagrammen"><span class="header-section-number">4.3</span> 3. Annotationen in Diagrammen</a></li>
-  <li><a href="#fazit" id="toc-fazit" class="nav-link" data-scroll-target="#fazit"><span class="header-section-number">4.4</span> Fazit</a></li>
+  <li><a href="#logarithmic-scales" id="toc-logarithmic-scales" class="nav-link active" data-scroll-target="#logarithmic-scales"><span class="header-section-number">4.1</span> 1. Logarithmic Scales</a></li>
+  <li><a href="#twin-axes-for-different-scales" id="toc-twin-axes-for-different-scales" class="nav-link" data-scroll-target="#twin-axes-for-different-scales"><span class="header-section-number">4.2</span> 2. Twin Axes for Different Scales</a></li>
+  <li><a href="#annotations-in-plots" id="toc-annotations-in-plots" class="nav-link" data-scroll-target="#annotations-in-plots"><span class="header-section-number">4.3</span> 3. Annotations in Plots</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">4.4</span> Conclusion</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bausteine-der-datenanalyse/a-auswertung_fds_daten/blob/main/skript/advanced_techniques.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -202,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Erweiterte Techniken in Matplotlib</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Advanced Techniques in Matplotlib</span></h1>
 </div>
 
 
@@ -219,11 +219,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>In diesem Kapitel betrachten wir einige fortgeschrittene Funktionen von Matplotlib, die für die wissenschaftliche Datenvisualisierung besonders nützlich sind.</p>
-<section id="logarithmische-skalen" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="logarithmische-skalen"><span class="header-section-number">4.1</span> 1. Logarithmische Skalen</h2>
-<p>Logarithmische Skalen werden oft verwendet, wenn Werte große Größenordnungen umfassen.</p>
-<div id="b62d058f" class="cell" data-execution_count="1">
+<p>In this chapter, we explore some advanced features of Matplotlib that are especially useful for scientific data visualization.</p>
+<section id="logarithmic-scales" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="logarithmic-scales"><span class="header-section-number">4.1</span> 1. Logarithmic Scales</h2>
+<p>Logarithmic scales are often used when values span several orders of magnitude.</p>
+<div id="86449ad0" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -232,9 +232,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, label<span class="op">=</span><span class="st">'log10(x)'</span>, color<span class="op">=</span><span class="st">'b'</span>)</span>
 <span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.xscale(<span class="st">'log'</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'X-Wert (log-Skala)'</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Y-Wert'</span>)</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Logarithmische Skalierung'</span>)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'X Value (log scale)'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Y Value'</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Logarithmic Scaling'</span>)</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, which<span class="op">=</span><span class="st">'both'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -247,10 +247,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="twin-achsen-für-verschiedene-skalierungen" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="twin-achsen-für-verschiedene-skalierungen"><span class="header-section-number">4.2</span> 2. Twin-Achsen für verschiedene Skalierungen</h2>
-<p>Manchmal möchte man zwei verschiedene y-Achsen in einem Plot darstellen.</p>
-<div id="d5438915" class="cell" data-execution_count="2">
+<section id="twin-axes-for-different-scales" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="twin-axes-for-different-scales"><span class="header-section-number">4.2</span> 2. Twin Axes for Different Scales</h2>
+<p>Sometimes you may want to display two different y-axes in one plot.</p>
+<div id="ce365338" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">100</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>y1 <span class="op">=</span> np.sin(x)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>y2 <span class="op">=</span> np.exp(x <span class="op">/</span> <span class="dv">3</span>)</span>
@@ -260,10 +260,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>ax1.plot(x, y1, <span class="st">'g-'</span>, label<span class="op">=</span><span class="st">'sin(x)'</span>)</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>ax2.plot(x, y2, <span class="st">'b--'</span>, label<span class="op">=</span><span class="st">'exp(x/3)'</span>)</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'X-Wert'</span>)</span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'Sinus'</span>, color<span class="op">=</span><span class="st">'g'</span>)</span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'Exponentiell'</span>, color<span class="op">=</span><span class="st">'b'</span>)</span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">'Twin-Achsen für unterschiedliche Skalierungen'</span>)</span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>ax1.set_xlabel(<span class="st">'X Value'</span>)</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>ax1.set_ylabel(<span class="st">'Sine'</span>, color<span class="op">=</span><span class="st">'g'</span>)</span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>ax2.set_ylabel(<span class="st">'Exponential'</span>, color<span class="op">=</span><span class="st">'b'</span>)</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>ax1.set_title(<span class="st">'Twin Axes for Different Scales'</span>)</span>
 <span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -274,18 +274,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="annotationen-in-diagrammen" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="annotationen-in-diagrammen"><span class="header-section-number">4.3</span> 3. Annotationen in Diagrammen</h2>
-<p>Wichtige Punkte oder Werte in einem Diagramm können mit Annotationen hervorgehoben werden.</p>
-<div id="e325176b" class="cell" data-execution_count="3">
+<section id="annotations-in-plots" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="annotations-in-plots"><span class="header-section-number">4.3</span> 3. Annotations in Plots</h2>
+<p>Important points or values in a plot can be highlighted using annotations.</p>
+<div id="b3b5916b" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">100</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.sin(x)</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, label<span class="op">=</span><span class="st">'sin(x)'</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'X-Wert'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'X Value'</span>)</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Amplitude'</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Annotationen in Matplotlib'</span>)</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.annotate(<span class="st">'Maximalwert'</span>, xy<span class="op">=</span>(np.pi<span class="op">/</span><span class="dv">2</span>, <span class="dv">1</span>), xytext<span class="op">=</span>(<span class="dv">2</span>, <span class="fl">1.2</span>),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Annotations in Matplotlib'</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.annotate(<span class="st">'Maximum Value'</span>, xy<span class="op">=</span>(np.pi<span class="op">/</span><span class="dv">2</span>, <span class="dv">1</span>), xytext<span class="op">=</span>(<span class="dv">2</span>, <span class="fl">1.2</span>),</span>
 <span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>             arrowprops<span class="op">=</span><span class="bu">dict</span>(facecolor<span class="op">=</span><span class="st">'red'</span>, shrink<span class="op">=</span><span class="fl">0.05</span>))</span>
 <span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -298,9 +298,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="fazit" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="fazit"><span class="header-section-number">4.4</span> Fazit</h2>
-<p>Diese erweiterten Funktionen helfen dabei, wissenschaftliche Plots noch informativer zu gestalten. Im nächsten Kapitel werden wir Best Practices und typische Fehler in der wissenschaftlichen Visualisierung betrachten.</p>
+<section id="conclusion" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">4.4</span> Conclusion</h2>
+<p>These advanced features help make scientific plots more informative. In the next chapter, we will look at best practices and common mistakes in scientific visualization.</p>
 
 
 </section>
@@ -725,13 +725,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../skript/adapting_plots.html" class="pagination-link" aria-label="Anpassung und Gestaltung von Plots in Matplotlib">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anpassung und Gestaltung von Plots in Matplotlib</span></span>
+      <a href="../skript/adapting_plots.html" class="pagination-link" aria-label="Customization and Adapting of Plots in Matplotlib">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Customization and Adapting of Plots in Matplotlib</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../skript/scientific_plotting.html" class="pagination-link" aria-label="Best Practices in Matplotlib: Fehler und Verbesserungen">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Best Practices in Matplotlib: Fehler und Verbesserungen</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../skript/scientific_plotting.html" class="pagination-link" aria-label="Best Practices in Matplotlib: Common Mistakes and Improvements">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Best Practices in Matplotlib: Common Mistakes and Improvements</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

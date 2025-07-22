@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Einführung in Matplotlib – Anwendungsbaustein - Auswertung von fds-Daten</title>
+<title>1&nbsp; Introduction to Matplotlib – Anwendungsbaustein - Auswertung von fds-Daten</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -74,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-173c08f0120535b1b8a0ba1fc00bb1ae.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-81892d67c6241247f2c4f8ce88ed6504.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../skript/introduction.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Einführung in Matplotlib</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../skript/introduction.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Matplotlib</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -153,31 +153,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/introduction.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Einführung in Matplotlib</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Matplotlib</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/basic_plot_types.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Diagrammtypen in Matplotlib</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Plot Types in Matplotlib</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/adapting_plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anpassung und Gestaltung von Plots in Matplotlib</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Customization and Adapting of Plots in Matplotlib</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/advanced_techniques.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Erweiterte Techniken in Matplotlib</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Advanced Techniques in Matplotlib</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/scientific_plotting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Best Practices in Matplotlib: Fehler und Verbesserungen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Best Practices in Matplotlib: Common Mistakes and Improvements</span></span></a>
   </div>
 </li>
     </ul>
@@ -190,10 +190,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#warum-matplotlib" id="toc-warum-matplotlib" class="nav-link active" data-scroll-target="#warum-matplotlib"><span class="header-section-number">1.1</span> Warum Matplotlib?</a></li>
-  <li><a href="#alternativen-zu-matplotlib" id="toc-alternativen-zu-matplotlib" class="nav-link" data-scroll-target="#alternativen-zu-matplotlib"><span class="header-section-number">1.2</span> Alternativen zu Matplotlib</a></li>
-  <li><a href="#erstes-beispiel-einfache-linie-plotten" id="toc-erstes-beispiel-einfache-linie-plotten" class="nav-link" data-scroll-target="#erstes-beispiel-einfache-linie-plotten"><span class="header-section-number">1.3</span> Erstes Beispiel: Einfache Linie plotten</a></li>
-  <li><a href="#nächste-schritte" id="toc-nächste-schritte" class="nav-link" data-scroll-target="#nächste-schritte"><span class="header-section-number">1.4</span> Nächste Schritte</a></li>
+  <li><a href="#why-matplotlib" id="toc-why-matplotlib" class="nav-link active" data-scroll-target="#why-matplotlib"><span class="header-section-number">1.1</span> Why Matplotlib?</a></li>
+  <li><a href="#alternatives-to-matplotlib" id="toc-alternatives-to-matplotlib" class="nav-link" data-scroll-target="#alternatives-to-matplotlib"><span class="header-section-number">1.2</span> Alternatives to Matplotlib</a></li>
+  <li><a href="#first-example-plotting-a-simple-line" id="toc-first-example-plotting-a-simple-line" class="nav-link" data-scroll-target="#first-example-plotting-a-simple-line"><span class="header-section-number">1.3</span> First Example: Plotting a Simple Line</a></li>
+  <li><a href="#next-steps" id="toc-next-steps" class="nav-link" data-scroll-target="#next-steps"><span class="header-section-number">1.4</span> Next Steps</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bausteine-der-datenanalyse/a-auswertung_fds_daten/blob/main/skript/introduction.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -202,7 +202,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Einführung in Matplotlib</span></h1>
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Matplotlib</span></h1>
 </div>
 
 
@@ -219,41 +219,41 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Matplotlib ist eine der bekanntesten Bibliotheken zur Datenvisualisierung in Python. Sie ermöglicht das Erstellen statischer, animierter und interaktiver Diagramme mit hoher Flexibilität.</p>
-<section id="warum-matplotlib" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="warum-matplotlib"><span class="header-section-number">1.1</span> Warum Matplotlib?</h2>
+<p>Matplotlib is one of the most well-known libraries for data visualization in Python. It allows the creation of static, animated, and interactive plots with high flexibility.</p>
+<section id="why-matplotlib" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="why-matplotlib"><span class="header-section-number">1.1</span> Why Matplotlib?</h2>
 <ul>
-<li><strong>Breite Unterstützung:</strong> Funktioniert mit NumPy, Pandas und SciPy.</li>
-<li><strong>Hohe Anpassbarkeit:</strong> Vollständige Kontrolle über Diagramme.</li>
-<li><strong>Integration in Jupyter Notebooks:</strong> Ideal für interaktive Datenanalyse.</li>
-<li><strong>Kompatibilität:</strong> Unterstützt verschiedene Ausgabeformate (PNG, SVG, PDF etc.).</li>
+<li><strong>Broad Support:</strong> Works well with NumPy, Pandas, and SciPy.</li>
+<li><strong>High Customizability:</strong> Full control over plots.</li>
+<li><strong>Integration with Jupyter Notebooks:</strong> Ideal for interactive data analysis.</li>
+<li><strong>Compatibility:</strong> Supports various output formats (PNG, SVG, PDF, etc.).</li>
 </ul>
 </section>
-<section id="alternativen-zu-matplotlib" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="alternativen-zu-matplotlib"><span class="header-section-number">1.2</span> Alternativen zu Matplotlib</h2>
-<p>Während Matplotlib leistungsstark ist, gibt es Alternativen, die für bestimmte Zwecke besser geeignet sein können: - <strong>Seaborn:</strong> Basiert auf Matplotlib, erleichtert statistische Visualisierung. - <strong>Plotly:</strong> Erzeugt interaktive Plots, gut für Dashboards. - <strong>Bokeh:</strong> Ideal für Web-Anwendungen mit interaktiven Visualisierungen.</p>
+<section id="alternatives-to-matplotlib" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="alternatives-to-matplotlib"><span class="header-section-number">1.2</span> Alternatives to Matplotlib</h2>
+<p>While Matplotlib is powerful, there are alternatives that may be better suited for specific purposes: - <strong>Seaborn:</strong> Built on top of Matplotlib, simplifies statistical visualizations. - <strong>Plotly:</strong> Creates interactive plots, great for dashboards. - <strong>Bokeh:</strong> Ideal for web applications with interactive visualizations.</p>
 </section>
-<section id="erstes-beispiel-einfache-linie-plotten" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="erstes-beispiel-einfache-linie-plotten"><span class="header-section-number">1.3</span> Erstes Beispiel: Einfache Linie plotten</h2>
+<section id="first-example-plotting-a-simple-line" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="first-example-plotting-a-simple-line"><span class="header-section-number">1.3</span> First Example: Plotting a Simple Line</h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Beispiel-Daten</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Example data</span></span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">10</span>, <span class="dv">100</span>)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.sin(t)</span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Erstellen des Plots</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Create the plot</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.plot(t, y, label<span class="op">=</span><span class="st">'sin(t)'</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Zeit (s)'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Time (s)'</span>)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Amplitude'</span>)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Einfaches Linien-Diagramm'</span>)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Simple Line Plot'</span>)</span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Dieses einfache Beispiel zeigt, wie man mit Matplotlib eine <strong>Sinuskurve</strong> visualisieren kann.</p>
+<p>This simple example demonstrates how to visualize a <strong>sine curve</strong> using Matplotlib.</p>
 </section>
-<section id="nächste-schritte" class="level2" data-number="1.4">
-<h2 data-number="1.4" class="anchored" data-anchor-id="nächste-schritte"><span class="header-section-number">1.4</span> Nächste Schritte</h2>
-<p>Im nächsten Kapitel werden wir uns mit den verschiedenen Diagrammtypen beschäftigen, die Matplotlib bietet.</p>
+<section id="next-steps" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="next-steps"><span class="header-section-number">1.4</span> Next Steps</h2>
+<p>In the next chapter, we will explore the different types of plots that Matplotlib offers.</p>
 
 
 </section>
@@ -683,8 +683,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../skript/basic_plot_types.html" class="pagination-link" aria-label="Diagrammtypen in Matplotlib">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Diagrammtypen in Matplotlib</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../skript/basic_plot_types.html" class="pagination-link" aria-label="Plot Types in Matplotlib">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Plot Types in Matplotlib</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

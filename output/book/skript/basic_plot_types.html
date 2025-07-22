@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>2&nbsp; Diagrammtypen in Matplotlib – Anwendungsbaustein - Auswertung von fds-Daten</title>
+<title>2&nbsp; Plot Types in Matplotlib – Anwendungsbaustein - Auswertung von fds-Daten</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -74,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-173c08f0120535b1b8a0ba1fc00bb1ae.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-81892d67c6241247f2c4f8ce88ed6504.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../skript/basic_plot_types.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Diagrammtypen in Matplotlib</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../skript/basic_plot_types.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Plot Types in Matplotlib</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -153,31 +153,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Einführung in Matplotlib</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Matplotlib</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/basic_plot_types.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Diagrammtypen in Matplotlib</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Plot Types in Matplotlib</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/adapting_plots.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anpassung und Gestaltung von Plots in Matplotlib</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Customization and Adapting of Plots in Matplotlib</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/advanced_techniques.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Erweiterte Techniken in Matplotlib</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Advanced Techniques in Matplotlib</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/scientific_plotting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Best Practices in Matplotlib: Fehler und Verbesserungen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Best Practices in Matplotlib: Common Mistakes and Improvements</span></span></a>
   </div>
 </li>
     </ul>
@@ -190,13 +190,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#liniendiagramme-plt.plot" id="toc-liniendiagramme-plt.plot" class="nav-link active" data-scroll-target="#liniendiagramme-plt.plot"><span class="header-section-number">2.1</span> 1. Liniendiagramme (<code>plt.plot()</code>)</a></li>
-  <li><a href="#streudiagramme-plt.scatter" id="toc-streudiagramme-plt.scatter" class="nav-link" data-scroll-target="#streudiagramme-plt.scatter"><span class="header-section-number">2.2</span> 2. Streudiagramme (<code>plt.scatter()</code>)</a></li>
-  <li><a href="#balkendiagramme-plt.bar" id="toc-balkendiagramme-plt.bar" class="nav-link" data-scroll-target="#balkendiagramme-plt.bar"><span class="header-section-number">2.3</span> 3. Balkendiagramme (<code>plt.bar()</code>)</a></li>
-  <li><a href="#histogramme-plt.hist" id="toc-histogramme-plt.hist" class="nav-link" data-scroll-target="#histogramme-plt.hist"><span class="header-section-number">2.4</span> 4. Histogramme (<code>plt.hist()</code>)</a></li>
-  <li><a href="#boxplots-plt.boxplot" id="toc-boxplots-plt.boxplot" class="nav-link" data-scroll-target="#boxplots-plt.boxplot"><span class="header-section-number">2.5</span> 5. Boxplots (<code>plt.boxplot()</code>)</a></li>
+  <li><a href="#line-plots-plt.plot" id="toc-line-plots-plt.plot" class="nav-link active" data-scroll-target="#line-plots-plt.plot"><span class="header-section-number">2.1</span> 1. Line plots (<code>plt.plot()</code>)</a></li>
+  <li><a href="#scatter-plots-plt.scatter" id="toc-scatter-plots-plt.scatter" class="nav-link" data-scroll-target="#scatter-plots-plt.scatter"><span class="header-section-number">2.2</span> 2. Scatter Plots (<code>plt.scatter()</code>)</a></li>
+  <li><a href="#bar-plots-plt.bar" id="toc-bar-plots-plt.bar" class="nav-link" data-scroll-target="#bar-plots-plt.bar"><span class="header-section-number">2.3</span> 3. Bar plots (<code>plt.bar()</code>)</a></li>
+  <li><a href="#histograms-plt.hist" id="toc-histograms-plt.hist" class="nav-link" data-scroll-target="#histograms-plt.hist"><span class="header-section-number">2.4</span> 4. Histograms (<code>plt.hist()</code>)</a></li>
+  <li><a href="#box-plots-plt.boxplot" id="toc-box-plots-plt.boxplot" class="nav-link" data-scroll-target="#box-plots-plt.boxplot"><span class="header-section-number">2.5</span> 5. Box Plots (<code>plt.boxplot()</code>)</a></li>
   <li><a href="#heatmaps-plt.imshow" id="toc-heatmaps-plt.imshow" class="nav-link" data-scroll-target="#heatmaps-plt.imshow"><span class="header-section-number">2.6</span> 6. Heatmaps (<code>plt.imshow()</code>)</a></li>
-  <li><a href="#fazit" id="toc-fazit" class="nav-link" data-scroll-target="#fazit"><span class="header-section-number">2.7</span> Fazit</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">2.7</span> Conclusion</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bausteine-der-datenanalyse/a-auswertung_fds_daten/blob/main/skript/basic_plot_types.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -205,7 +205,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Diagrammtypen in Matplotlib</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Plot Types in Matplotlib</span></h1>
 </div>
 
 
@@ -222,11 +222,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Matplotlib bietet eine Vielzahl von Diagrammtypen, die für unterschiedliche Zwecke geeignet sind. In diesem Kapitel werden die wichtigsten Diagrammtypen vorgestellt und ihre Anwendungsfälle erklärt.</p>
-<section id="liniendiagramme-plt.plot" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="liniendiagramme-plt.plot"><span class="header-section-number">2.1</span> 1. Liniendiagramme (<code>plt.plot()</code>)</h2>
-<p>Liniendiagramme eignen sich hervorragend zur Darstellung von Trends über Zeit.</p>
-<div id="29749d61" class="cell" data-execution_count="1">
+<p>Matplotlib offers a variety of plot types suitable for different purposes. In this chapter, we introduce the most important plot types and explain their use cases.</p>
+<section id="line-plots-plt.plot" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="line-plots-plt.plot"><span class="header-section-number">2.1</span> 1. Line plots (<code>plt.plot()</code>)</h2>
+<p>Line plots are excellent for visualizing trends over time.</p>
+<div id="79f0ec95" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -234,9 +234,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.sin(t)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.plot(t, y, label<span class="op">=</span><span class="st">'sin(t)'</span>, color<span class="op">=</span><span class="st">'b'</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Zeit (s)'</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Time (s)'</span>)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Amplitude'</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Liniendiagramm'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Line plot'</span>)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -248,17 +248,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="streudiagramme-plt.scatter" class="level2" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="streudiagramme-plt.scatter"><span class="header-section-number">2.2</span> 2. Streudiagramme (<code>plt.scatter()</code>)</h2>
-<p>Streudiagramme werden verwendet, um Zusammenhänge zwischen zwei Variablen darzustellen.</p>
-<div id="10e2734e" class="cell" data-execution_count="2">
+<section id="scatter-plots-plt.scatter" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="scatter-plots-plt.scatter"><span class="header-section-number">2.2</span> 2. Scatter Plots (<code>plt.scatter()</code>)</h2>
+<p>Scatter plots are used to show relationships between two variables.</p>
+<div id="bd29aff9" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.random.rand(<span class="dv">50</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.random.rand(<span class="dv">50</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.scatter(x, y, color<span class="op">=</span><span class="st">'r'</span>, alpha<span class="op">=</span><span class="fl">0.5</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Variable X'</span>)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Variable Y'</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Streudiagramm'</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Scatter Plot'</span>)</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -269,17 +269,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="balkendiagramme-plt.bar" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="balkendiagramme-plt.bar"><span class="header-section-number">2.3</span> 3. Balkendiagramme (<code>plt.bar()</code>)</h2>
-<p>Balkendiagramme eignen sich zur Darstellung kategorialer Daten.</p>
-<div id="6e917df4" class="cell" data-execution_count="3">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>kategorien <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>]</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>werte <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">5</span>]</span>
+<section id="bar-plots-plt.bar" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="bar-plots-plt.bar"><span class="header-section-number">2.3</span> 3. Bar plots (<code>plt.bar()</code>)</h2>
+<p>Bar plots are suitable for representing categorical data.</p>
+<div id="e2342714" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>categories <span class="op">=</span> [<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>]</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>values <span class="op">=</span> [<span class="dv">3</span>, <span class="dv">7</span>, <span class="dv">1</span>, <span class="dv">5</span>]</span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.bar(kategorien, werte, color<span class="op">=</span><span class="st">'g'</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Kategorien'</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Wert'</span>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Balkendiagramm'</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.bar(categories, values, color<span class="op">=</span><span class="st">'g'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Categories'</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Value'</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Bar plot'</span>)</span>
 <span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -290,15 +290,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="histogramme-plt.hist" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="histogramme-plt.hist"><span class="header-section-number">2.4</span> 4. Histogramme (<code>plt.hist()</code>)</h2>
-<p>Histogramme zeigen die Verteilung numerischer Daten.</p>
-<div id="7106f4ee" class="cell" data-execution_count="4">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>daten <span class="op">=</span> np.random.randn(<span class="dv">1000</span>)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.hist(daten, bins<span class="op">=</span><span class="dv">30</span>, color<span class="op">=</span><span class="st">'purple'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Wert'</span>)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Häufigkeit'</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogramm'</span>)</span>
+<section id="histograms-plt.hist" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="histograms-plt.hist"><span class="header-section-number">2.4</span> 4. Histograms (<code>plt.hist()</code>)</h2>
+<p>Histograms show the distribution of numerical data.</p>
+<div id="0aa3f36f" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.random.randn(<span class="dv">1000</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>plt.hist(data, bins<span class="op">=</span><span class="dv">30</span>, color<span class="op">=</span><span class="st">'purple'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Value'</span>)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Frequency'</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Histogram'</span>)</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -309,18 +309,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="boxplots-plt.boxplot" class="level2" data-number="2.5">
-<h2 data-number="2.5" class="anchored" data-anchor-id="boxplots-plt.boxplot"><span class="header-section-number">2.5</span> 5. Boxplots (<code>plt.boxplot()</code>)</h2>
-<p>Boxplots helfen, Ausreißer und die Verteilung von Daten zu visualisieren.</p>
-<div id="cdc0169a" class="cell" data-execution_count="5">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>daten <span class="op">=</span> [np.random.randn(<span class="dv">100</span>) <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>)]</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.boxplot(daten, labels<span class="op">=</span>[<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>])</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Wert'</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Boxplot'</span>)</span>
+<section id="box-plots-plt.boxplot" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="box-plots-plt.boxplot"><span class="header-section-number">2.5</span> 5. Box Plots (<code>plt.boxplot()</code>)</h2>
+<p>Box plots help visualize outliers and data distribution.</p>
+<div id="530a7587" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [np.random.randn(<span class="dv">100</span>) <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">4</span>)]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.boxplot(data, labels<span class="op">=</span>[<span class="st">'A'</span>, <span class="st">'B'</span>, <span class="st">'C'</span>, <span class="st">'D'</span>])</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Value'</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Box Plot'</span>)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>/tmp/ipykernel_4429/2728911591.py:2: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
-  plt.boxplot(daten, labels=['A', 'B', 'C', 'D'])</code></pre>
+<pre><code>/tmp/ipykernel_3862/3930898833.py:2: MatplotlibDeprecationWarning: The 'labels' parameter of boxplot() has been renamed 'tick_labels' since Matplotlib 3.9; support for the old name will be dropped in 3.11.
+  plt.boxplot(data, labels=['A', 'B', 'C', 'D'])</code></pre>
 </div>
 <div class="cell-output cell-output-display">
 <div>
@@ -333,10 +333,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="heatmaps-plt.imshow" class="level2" data-number="2.6">
 <h2 data-number="2.6" class="anchored" data-anchor-id="heatmaps-plt.imshow"><span class="header-section-number">2.6</span> 6. Heatmaps (<code>plt.imshow()</code>)</h2>
-<p>Heatmaps eignen sich zur Darstellung von 2D-Daten.</p>
-<div id="4e6100ff" class="cell" data-execution_count="6">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>daten <span class="op">=</span> np.random.rand(<span class="dv">10</span>, <span class="dv">10</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.imshow(daten, cmap<span class="op">=</span><span class="st">'coolwarm'</span>, interpolation<span class="op">=</span><span class="st">'nearest'</span>)</span>
+<p>Heatmaps are useful for displaying 2D data.</p>
+<div id="d3c9e8f0" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> np.random.rand(<span class="dv">10</span>, <span class="dv">10</span>)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>plt.imshow(data, cmap<span class="op">=</span><span class="st">'coolwarm'</span>, interpolation<span class="op">=</span><span class="st">'nearest'</span>)</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>plt.colorbar()</span>
 <span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Heatmap'</span>)</span>
 <span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -349,9 +349,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="fazit" class="level2" data-number="2.7">
-<h2 data-number="2.7" class="anchored" data-anchor-id="fazit"><span class="header-section-number">2.7</span> Fazit</h2>
-<p>Die Wahl des richtigen Diagrammtyps hängt von der Art der Daten und der gewünschten Darstellung ab. Im nächsten Kapitel werden wir uns mit der Anpassung und Gestaltung von Plots beschäftigen.</p>
+<section id="conclusion" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">2.7</span> Conclusion</h2>
+<p>The choice of plot type depends on the nature of the data and the intended representation. In the next chapter, we will explore customizing and adapting plots.</p>
 
 
 </section>
@@ -776,13 +776,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../skript/introduction.html" class="pagination-link" aria-label="Einführung in Matplotlib">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Einführung in Matplotlib</span></span>
+      <a href="../skript/introduction.html" class="pagination-link" aria-label="Introduction to Matplotlib">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Matplotlib</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../skript/adapting_plots.html" class="pagination-link" aria-label="Anpassung und Gestaltung von Plots in Matplotlib">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anpassung und Gestaltung von Plots in Matplotlib</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../skript/adapting_plots.html" class="pagination-link" aria-label="Customization and Adapting of Plots in Matplotlib">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Customization and Adapting of Plots in Matplotlib</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

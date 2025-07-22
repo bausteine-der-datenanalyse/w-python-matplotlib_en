@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Anpassung und Gestaltung von Plots in Matplotlib – Anwendungsbaustein - Auswertung von fds-Daten</title>
+<title>3&nbsp; Customization and Adapting of Plots in Matplotlib – Anwendungsbaustein - Auswertung von fds-Daten</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -74,7 +74,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting-2f5df379a58b258e96c21c0638c20c03.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../site_libs/bootstrap/bootstrap-173c08f0120535b1b8a0ba1fc00bb1ae.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-81892d67c6241247f2c4f8ce88ed6504.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -115,7 +115,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../skript/adapting_plots.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anpassung und Gestaltung von Plots in Matplotlib</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../skript/adapting_plots.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Customization and Adapting of Plots in Matplotlib</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -153,31 +153,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/introduction.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Einführung in Matplotlib</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Matplotlib</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/basic_plot_types.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Diagrammtypen in Matplotlib</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Plot Types in Matplotlib</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/adapting_plots.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anpassung und Gestaltung von Plots in Matplotlib</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Customization and Adapting of Plots in Matplotlib</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/advanced_techniques.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Erweiterte Techniken in Matplotlib</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Advanced Techniques in Matplotlib</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../skript/scientific_plotting.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Best Practices in Matplotlib: Fehler und Verbesserungen</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Best Practices in Matplotlib: Common Mistakes and Improvements</span></span></a>
   </div>
 </li>
     </ul>
@@ -190,16 +190,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#achsentitel-und-diagrammtitel" id="toc-achsentitel-und-diagrammtitel" class="nav-link active" data-scroll-target="#achsentitel-und-diagrammtitel"><span class="header-section-number">3.1</span> 1. Achsentitel und Diagrammtitel</a></li>
-  <li><a href="#anpassung-der-achsen" id="toc-anpassung-der-achsen" class="nav-link" data-scroll-target="#anpassung-der-achsen"><span class="header-section-number">3.2</span> 2. Anpassung der Achsen</a></li>
-  <li><a href="#farben-und-linienstile" id="toc-farben-und-linienstile" class="nav-link" data-scroll-target="#farben-und-linienstile"><span class="header-section-number">3.3</span> 3. Farben und Linienstile</a>
+  <li><a href="#axis-labels-and-plot-title" id="toc-axis-labels-and-plot-title" class="nav-link active" data-scroll-target="#axis-labels-and-plot-title"><span class="header-section-number">3.1</span> 1. Axis Labels and Plot Title</a></li>
+  <li><a href="#adjusting-axes" id="toc-adjusting-axes" class="nav-link" data-scroll-target="#adjusting-axes"><span class="header-section-number">3.2</span> 2. Adjusting Axes</a></li>
+  <li><a href="#colors-and-line-styles" id="toc-colors-and-line-styles" class="nav-link" data-scroll-target="#colors-and-line-styles"><span class="header-section-number">3.3</span> 3. Colors and Line Styles</a>
   <ul class="collapse">
-  <li><a href="#wichtige-farben-standardfarben-in-matplotlib" id="toc-wichtige-farben-standardfarben-in-matplotlib" class="nav-link" data-scroll-target="#wichtige-farben-standardfarben-in-matplotlib"><span class="header-section-number">3.3.1</span> Wichtige Farben (Standardfarben in Matplotlib)</a></li>
-  <li><a href="#wichtige-linienstile" id="toc-wichtige-linienstile" class="nav-link" data-scroll-target="#wichtige-linienstile"><span class="header-section-number">3.3.2</span> Wichtige Linienstile</a></li>
+  <li><a href="#common-colors-default-colors-in-matplotlib" id="toc-common-colors-default-colors-in-matplotlib" class="nav-link" data-scroll-target="#common-colors-default-colors-in-matplotlib"><span class="header-section-number">3.3.1</span> Common Colors (Default Colors in Matplotlib)</a></li>
+  <li><a href="#common-line-styles" id="toc-common-line-styles" class="nav-link" data-scroll-target="#common-line-styles"><span class="header-section-number">3.3.2</span> Common Line Styles</a></li>
   </ul></li>
-  <li><a href="#mehrere-plots-mit-subplots" id="toc-mehrere-plots-mit-subplots" class="nav-link" data-scroll-target="#mehrere-plots-mit-subplots"><span class="header-section-number">3.4</span> 4. Mehrere Plots mit Subplots</a></li>
-  <li><a href="#speichern-von-plots" id="toc-speichern-von-plots" class="nav-link" data-scroll-target="#speichern-von-plots"><span class="header-section-number">3.5</span> 5. Speichern von Plots</a></li>
-  <li><a href="#fazit" id="toc-fazit" class="nav-link" data-scroll-target="#fazit"><span class="header-section-number">3.6</span> Fazit</a></li>
+  <li><a href="#multiple-plots-with-subplots" id="toc-multiple-plots-with-subplots" class="nav-link" data-scroll-target="#multiple-plots-with-subplots"><span class="header-section-number">3.4</span> 4. Multiple Plots with Subplots</a></li>
+  <li><a href="#saving-plots" id="toc-saving-plots" class="nav-link" data-scroll-target="#saving-plots"><span class="header-section-number">3.5</span> 5. Saving Plots</a></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion"><span class="header-section-number">3.6</span> Conclusion</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/bausteine-der-datenanalyse/a-auswertung_fds_daten/blob/main/skript/adapting_plots.qmd" class="toc-action"><i class="bi bi-github"></i>View source</a></li></ul></div></nav>
     </div>
@@ -208,7 +208,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Anpassung und Gestaltung von Plots in Matplotlib</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Customization and Adapting of Plots in Matplotlib</span></h1>
 </div>
 
 
@@ -225,11 +225,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Ein gut gestaltetes Diagramm verbessert die Lesbarkeit und Verständlichkeit der dargestellten Daten. In diesem Kapitel werden wir verschiedene Möglichkeiten zur Anpassung und Gestaltung von Plots in Matplotlib erkunden.</p>
-<section id="achsentitel-und-diagrammtitel" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="achsentitel-und-diagrammtitel"><span class="header-section-number">3.1</span> 1. Achsentitel und Diagrammtitel</h2>
-<p>Klare Achsen- und Diagrammtitel sind essenziell für die Verständlichkeit eines Plots.</p>
-<div id="021e5a66" class="cell" data-execution_count="1">
+<p>A well-designed plot improves the readability and comprehension of the data presented. In this chapter, we will explore various ways to customize and adapt plots using Matplotlib.</p>
+<section id="axis-labels-and-plot-title" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="axis-labels-and-plot-title"><span class="header-section-number">3.1</span> 1. Axis Labels and Plot Title</h2>
+<p>Clear axis and plot titles are essential for understanding a plot.</p>
+<div id="221e085b" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -237,9 +237,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.sin(t)</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>plt.plot(t, y, label<span class="op">=</span><span class="st">'sin(t)'</span>, color<span class="op">=</span><span class="st">'b'</span>)</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Zeit (s)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Time (s)'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Amplitude'</span>, fontsize<span class="op">=</span><span class="dv">12</span>)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Liniendiagramm mit Beschriftung'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Line Plot with Labels'</span>, fontsize<span class="op">=</span><span class="dv">14</span>)</span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -251,17 +251,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="anpassung-der-achsen" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="anpassung-der-achsen"><span class="header-section-number">3.2</span> 2. Anpassung der Achsen</h2>
-<p>Die Skalierung der Achsen sollte sinnvoll gewählt werden, um die Daten bestmöglich darzustellen.</p>
-<div id="a195173a" class="cell" data-execution_count="2">
+<section id="adjusting-axes" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="adjusting-axes"><span class="header-section-number">3.2</span> 2. Adjusting Axes</h2>
+<p>The scaling of the axes should be chosen appropriately to best represent the data.</p>
+<div id="7ce7888b" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>plt.plot(t, y, label<span class="op">=</span><span class="st">'sin(t)'</span>, color<span class="op">=</span><span class="st">'b'</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Zeit (s)'</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Time (s)'</span>)</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Amplitude'</span>)</span>
 <span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="dv">0</span>, <span class="dv">10</span>)</span>
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="op">-</span><span class="fl">1.2</span>, <span class="fl">1.2</span>)</span>
 <span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>plt.grid(<span class="va">True</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, alpha<span class="op">=</span><span class="fl">0.7</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Liniendiagramm mit angepassten Achsen'</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Line Plot with Adjusted Axes'</span>)</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -273,32 +273,32 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="farben-und-linienstile" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="farben-und-linienstile"><span class="header-section-number">3.3</span> 3. Farben und Linienstile</h2>
-<p>Farben und Linienstile helfen dabei, wichtige Informationen im Plot hervorzuheben.</p>
-<section id="wichtige-farben-standardfarben-in-matplotlib" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="wichtige-farben-standardfarben-in-matplotlib"><span class="header-section-number">3.3.1</span> Wichtige Farben (Standardfarben in Matplotlib)</h3>
+<section id="colors-and-line-styles" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="colors-and-line-styles"><span class="header-section-number">3.3</span> 3. Colors and Line Styles</h2>
+<p>Colors and line styles help to highlight important information in the plot.</p>
+<section id="common-colors-default-colors-in-matplotlib" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="common-colors-default-colors-in-matplotlib"><span class="header-section-number">3.3.1</span> Common Colors (Default Colors in Matplotlib)</h3>
 <table class="table">
 <thead>
 <tr class="header">
-<th>Farbe</th>
-<th>Kürzel</th>
-<th>Beschreibung</th>
+<th>Color</th>
+<th>Code</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Blau</td>
+<td>Blue</td>
 <td>‘b’</td>
 <td>blue</td>
 </tr>
 <tr class="even">
-<td>Grün</td>
+<td>Green</td>
 <td>‘g’</td>
 <td>green</td>
 </tr>
 <tr class="odd">
-<td>Rot</td>
+<td>Red</td>
 <td>‘r’</td>
 <td>red</td>
 </tr>
@@ -313,62 +313,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <td>magenta</td>
 </tr>
 <tr class="even">
-<td>Gelb</td>
+<td>Yellow</td>
 <td>‘y’</td>
 <td>yellow</td>
 </tr>
 <tr class="odd">
-<td>Schwarz</td>
+<td>Black</td>
 <td>‘k’</td>
 <td>black</td>
 </tr>
 <tr class="even">
-<td>Weiß</td>
+<td>White</td>
 <td>‘w’</td>
 <td>white</td>
 </tr>
 </tbody>
 </table>
 </section>
-<section id="wichtige-linienstile" class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="wichtige-linienstile"><span class="header-section-number">3.3.2</span> Wichtige Linienstile</h3>
+<section id="common-line-styles" class="level3" data-number="3.3.2">
+<h3 data-number="3.3.2" class="anchored" data-anchor-id="common-line-styles"><span class="header-section-number">3.3.2</span> Common Line Styles</h3>
 <table class="table">
 <thead>
 <tr class="header">
-<th>Linienstil</th>
-<th>Kürzel</th>
-<th>Beschreibung</th>
+<th>Line Style</th>
+<th>Code</th>
+<th>Description</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>Durchgezogen</td>
+<td>Solid</td>
 <td>‘-’</td>
-<td>Standardlinie</td>
+<td>default line</td>
 </tr>
 <tr class="even">
-<td>Gestrichelt</td>
+<td>Dashed</td>
 <td>‘–’</td>
-<td>lange Striche</td>
+<td>long dashes</td>
 </tr>
 <tr class="odd">
-<td>Gepunktet</td>
+<td>Dotted</td>
 <td>‘:’</td>
-<td>nur Punkte</td>
+<td>only dots</td>
 </tr>
 <tr class="even">
-<td>Strich-Punkt</td>
+<td>Dash-dot</td>
 <td>‘-.’</td>
-<td>abwechselnd Strich-Punkt</td>
+<td>alternating dash-dot</td>
 </tr>
 </tbody>
 </table>
-<div id="2fc92881" class="cell" data-execution_count="3">
+<div id="31330c91" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>plt.plot(t, np.sin(t), linestyle<span class="op">=</span><span class="st">'-'</span>, color<span class="op">=</span><span class="st">'r'</span>, label<span class="op">=</span><span class="st">'sin(t)'</span>)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>plt.plot(t, np.cos(t), linestyle<span class="op">=</span><span class="st">'--'</span>, color<span class="op">=</span><span class="st">'g'</span>, label<span class="op">=</span><span class="st">'cos(t)'</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Zeit (s)'</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Time (s)'</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Amplitude'</span>)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Anpassung von Farben und Linienstilen'</span>)</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Customization of Colors and Line Styles'</span>)</span>
 <span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
 <span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -381,15 +381,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="mehrere-plots-mit-subplots" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="mehrere-plots-mit-subplots"><span class="header-section-number">3.4</span> 4. Mehrere Plots mit Subplots</h2>
-<p>Manchmal ist es sinnvoll, mehrere Diagramme in einer Abbildung darzustellen.</p>
-<div id="88d4530c" class="cell" data-execution_count="4">
+<section id="multiple-plots-with-subplots" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="multiple-plots-with-subplots"><span class="header-section-number">3.4</span> 4. Multiple Plots with Subplots</h2>
+<p>Sometimes it’s useful to display multiple plots in a single figure.</p>
+<div id="beb12838" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>fig, axs <span class="op">=</span> plt.subplots(<span class="dv">2</span>, <span class="dv">1</span>, figsize<span class="op">=</span>(<span class="dv">6</span>, <span class="dv">6</span>))</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].plot(t, np.sin(t), color<span class="op">=</span><span class="st">'b'</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_title(<span class="st">'Sinusfunktion'</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">0</span>].set_title(<span class="st">'Sine Function'</span>)</span>
 <span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].plot(t, np.cos(t), color<span class="op">=</span><span class="st">'r'</span>)</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_title(<span class="st">'Kosinusfunktion'</span>)</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>axs[<span class="dv">1</span>].set_title(<span class="st">'Cosine Function'</span>)</span>
 <span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>plt.tight_layout()</span>
 <span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
@@ -401,16 +401,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="speichern-von-plots" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="speichern-von-plots"><span class="header-section-number">3.5</span> 5. Speichern von Plots</h2>
-<p>Man kann Diagramme in verschiedenen Formaten speichern.</p>
-<div id="10e4d010" class="cell" data-execution_count="5">
+<section id="saving-plots" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="saving-plots"><span class="header-section-number">3.5</span> 5. Saving Plots</h2>
+<p>Plots can be saved in various formats.</p>
+<div id="b4569765" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>plt.plot(t, y, label<span class="op">=</span><span class="st">'sin(t)'</span>, color<span class="op">=</span><span class="st">'b'</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Zeit (s)'</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Time (s)'</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Amplitude'</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Speicherung eines Plots'</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Saving a Plot'</span>)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'mein_plot.png'</span>, dpi<span class="op">=</span><span class="dv">300</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'my_plot.png'</span>, dpi<span class="op">=</span><span class="dv">300</span>)</span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-display">
 <div>
@@ -421,9 +421,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 </section>
-<section id="fazit" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="fazit"><span class="header-section-number">3.6</span> Fazit</h2>
-<p>Durch geschickte Anpassungen lassen sich wissenschaftliche Plots deutlich verbessern. Im nächsten Kapitel werden wir uns mit erweiterten Techniken wie logarithmischen Skalen und Annotationen beschäftigen.</p>
+<section id="conclusion" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="conclusion"><span class="header-section-number">3.6</span> Conclusion</h2>
+<p>With careful customization, scientific plots can be significantly improved. In the next chapter, we will explore advanced techniques such as logarithmic scales and annotations.</p>
 
 
 </section>
@@ -848,13 +848,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="../skript/basic_plot_types.html" class="pagination-link" aria-label="Diagrammtypen in Matplotlib">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Diagrammtypen in Matplotlib</span></span>
+      <a href="../skript/basic_plot_types.html" class="pagination-link" aria-label="Plot Types in Matplotlib">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Plot Types in Matplotlib</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="../skript/advanced_techniques.html" class="pagination-link" aria-label="Erweiterte Techniken in Matplotlib">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Erweiterte Techniken in Matplotlib</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="../skript/advanced_techniques.html" class="pagination-link" aria-label="Advanced Techniques in Matplotlib">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Advanced Techniques in Matplotlib</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
