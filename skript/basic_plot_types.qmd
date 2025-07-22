@@ -1,9 +1,9 @@
-# Diagrammtypen in Matplotlib
+# Plot Types in Matplotlib
 
-Matplotlib bietet eine Vielzahl von Diagrammtypen, die für unterschiedliche Zwecke geeignet sind. In diesem Kapitel werden die wichtigsten Diagrammtypen vorgestellt und ihre Anwendungsfälle erklärt.
+Matplotlib offers a variety of plot types suitable for different purposes. In this chapter, we introduce the most important plot types and explain their use cases.
 
-## 1. Liniendiagramme (`plt.plot()`)
-Liniendiagramme eignen sich hervorragend zur Darstellung von Trends über Zeit.
+## 1. Line plots (`plt.plot()`)
+Line plots are excellent for visualizing trends over time.
 
 ```{python}
 import matplotlib.pyplot as plt
@@ -13,15 +13,15 @@ t = np.linspace(0, 10, 100)
 y = np.sin(t)
 
 plt.plot(t, y, label='sin(t)', color='b')
-plt.xlabel('Zeit (s)')
+plt.xlabel('Time (s)')
 plt.ylabel('Amplitude')
-plt.title('Liniendiagramm')
+plt.title('Line plot')
 plt.legend()
 plt.show()
 ```
 
-## 2. Streudiagramme (`plt.scatter()`)
-Streudiagramme werden verwendet, um Zusammenhänge zwischen zwei Variablen darzustellen.
+## 2. Scatter Plots (`plt.scatter()`)
+Scatter plots are used to show relationships between two variables.
 
 ```{python}
 x = np.random.rand(50)
@@ -30,57 +30,57 @@ y = np.random.rand(50)
 plt.scatter(x, y, color='r', alpha=0.5)
 plt.xlabel('Variable X')
 plt.ylabel('Variable Y')
-plt.title('Streudiagramm')
+plt.title('Scatter Plot')
 plt.show()
 ```
 
-## 3. Balkendiagramme (`plt.bar()`)
-Balkendiagramme eignen sich zur Darstellung kategorialer Daten.
+## 3. Bar plots (`plt.bar()`)
+Bar plots are suitable for representing categorical data.
 
 ```{python}
-kategorien = ['A', 'B', 'C', 'D']
-werte = [3, 7, 1, 5]
+categories = ['A', 'B', 'C', 'D']
+values = [3, 7, 1, 5]
 
-plt.bar(kategorien, werte, color='g')
-plt.xlabel('Kategorien')
-plt.ylabel('Wert')
-plt.title('Balkendiagramm')
+plt.bar(categories, values, color='g')
+plt.xlabel('Categories')
+plt.ylabel('Value')
+plt.title('Bar plot')
 plt.show()
 ```
 
-## 4. Histogramme (`plt.hist()`)
-Histogramme zeigen die Verteilung numerischer Daten.
+## 4. Histograms (`plt.hist()`)
+Histograms show the distribution of numerical data.
 
 ```{python}
-daten = np.random.randn(1000)
-plt.hist(daten, bins=30, color='purple', alpha=0.7)
-plt.xlabel('Wert')
-plt.ylabel('Häufigkeit')
-plt.title('Histogramm')
+data = np.random.randn(1000)
+plt.hist(data, bins=30, color='purple', alpha=0.7)
+plt.xlabel('Value')
+plt.ylabel('Frequency')
+plt.title('Histogram')
 plt.show()
 ```
 
-## 5. Boxplots (`plt.boxplot()`)
-Boxplots helfen, Ausreißer und die Verteilung von Daten zu visualisieren.
+## 5. Box Plots (`plt.boxplot()`)
+Box plots help visualize outliers and data distribution.
 
 ```{python}
-daten = [np.random.randn(100) for _ in range(4)]
-plt.boxplot(daten, labels=['A', 'B', 'C', 'D'])
-plt.ylabel('Wert')
-plt.title('Boxplot')
+data = [np.random.randn(100) for _ in range(4)]
+plt.boxplot(data, labels=['A', 'B', 'C', 'D'])
+plt.ylabel('Value')
+plt.title('Box Plot')
 plt.show()
 ```
 
 ## 6. Heatmaps (`plt.imshow()`)
-Heatmaps eignen sich zur Darstellung von 2D-Daten.
+Heatmaps are useful for displaying 2D data.
 
 ```{python}
-daten = np.random.rand(10, 10)
-plt.imshow(daten, cmap='coolwarm', interpolation='nearest')
+data = np.random.rand(10, 10)
+plt.imshow(data, cmap='coolwarm', interpolation='nearest')
 plt.colorbar()
 plt.title('Heatmap')
 plt.show()
 ```
 
-## Fazit
-Die Wahl des richtigen Diagrammtyps hängt von der Art der Daten und der gewünschten Darstellung ab. Im nächsten Kapitel werden wir uns mit der Anpassung und Gestaltung von Plots beschäftigen.
+## Conclusion
+The choice of plot type depends on the nature of the data and the intended representation. In the next chapter, we will explore customizing and adapting plots.
